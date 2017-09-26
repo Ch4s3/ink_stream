@@ -17,7 +17,7 @@
   pub = Publication.create(params)
 
   20.times do
-    title = Faker::Seinfeld.quote
+    title = Faker::Hipster.sentence
 
     Article.create(
       title: title,

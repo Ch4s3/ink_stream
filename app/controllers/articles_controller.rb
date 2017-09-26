@@ -9,11 +9,12 @@ class ArticlesController < ApplicationController
   end
 
   def results
-    @articles = Article.where("title LIKE ?", "%#{articles_search_params[:title]}%")
+    @articles =
+      Articles::Finder.find(articles_search_params[:publications],
+                            articles_search_params[:title])
   end
 
   def show
-    binding.pry
     @article = Article.last
   end
 

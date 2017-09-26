@@ -1,0 +1,11 @@
+<%- if @articles.length > 0 %>
+  <%- @articles.each do |article| %>
+    <% cache article do %>
+      <div class="row">
+        <%= link_to(article.title, article_path(article.id)) %>
+      </div>
+    <% end %>
+  <% end %>
+<%- else %>
+  <h4>No Results Found<h4>
+<% end %>

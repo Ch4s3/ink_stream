@@ -1,7 +1,9 @@
 <%= form_for @articles_search_form, url: {action: "results"}, method: "get" do |f| %>
-  <%= f.label(:publications)%>
-  <%= f.select(:publications, @articles_search_form.publications) %>
-  <%= f.label(:title)%>
-  <%= f.text_field :title %>
-  <%= f.submit "Search" %>
+  <fieldset>
+    <%= f.label(:publications)%>
+    <%= f.select(:publications, @articles_search_form.publications) %>
+    <%= f.label(:title)%>
+    <%= f.text_field :title %>
+    <%= f.submit "Search", class: "button button-outline" %>
+  </fieldset>
 <% end %>

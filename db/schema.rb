@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170914044500) do
+ActiveRecord::Schema.define(version: 20170926043210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20170914044500) do
     t.datetime "updated_at", null: false
     t.text "excerpt"
     t.index ["publication_id"], name: "index_articles_on_publication_id"
+    t.index ["title", "publication_id"], name: "index_articles_on_title_and_publication_id"
     t.index ["title"], name: "index_articles_on_title"
   end
 
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20170914044500) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "score"
+    t.index ["name"], name: "index_publications_on_name"
   end
 
   add_foreign_key "articles", "publications"

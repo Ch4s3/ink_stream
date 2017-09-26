@@ -10,6 +10,6 @@ class ArticlesSearchForm < FormObject
   private
 
   def top_ten
-    Publication.select(:name).map(&:name).push('')
+    Publication.select(:name).limit(10).map(&:name).push('')
   end
 end
