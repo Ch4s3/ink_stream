@@ -1,2 +1,7 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<% cache @article do %>
+  <div class="articles">
+    <h1><%= @article.title %></h1>
+    <p><%= @article.excerpt %></p>
+    <%= link_to("back to search", root_url(), class: "articles-list-link")%>
+  </div>
+<% end %>

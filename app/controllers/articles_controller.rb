@@ -1,21 +1,21 @@
 class ArticlesController < ApplicationController
-  def new
-  end
+  before_action :find_article, only: [:show]
+  before_action :validate_search, only: [:results]
 
-  def index
-  end
-
-  def create
-  end
 
   def results
+    @publications = articles_search_params[:publications]
+    @title_search = articles_search_params[:title]
+    @search_offset = articles_search_params[:search_offset].to_i || 0
     @articles =
-      Articles::Finder.find(articles_search_params[:publications],
-                            articles_search_params[:title])
+      Articles::Finder.find(@publications, @title_search, @search_offset)
   end
 
   def show
-    @article = Article.last
+    unless @article
+      flash[:error] = 'The requested article does not exist'
+      redirect_to root_url
+    end
   end
 
   def search
@@ -23,8 +23,23 @@ class ArticlesController < ApplicationController
   end
 
   private
+  def validate_search
+    if articles_search_params['title'].blank?
+      flash[:error] = 'You must include a title to search for articles'
+      redirect_to root_url
+    end
+  end
+
+  def find_article
+    @article = Article.where(uuid: article_show_params['id']).first
+  end
+
+  def article_show_params
+    params.permit('id')
+  end
 
   def articles_search_params
-    params.require(:articles_search_form).permit(:publications, :title)
+    params.require(:articles_search_form)
+          .permit(:publications, :title, :search_offset)
   end
 end

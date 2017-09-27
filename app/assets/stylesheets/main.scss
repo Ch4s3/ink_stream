@@ -1,0 +1,54 @@
+$primary-color: #29B6F6;
+$secondary-color: #311B92;
+$off-white: #fffefe;
+body {
+  background-color: #fffefe
+}
+main {
+  padding: 2rem;
+}
+
+.content {
+  margin: 4rem 0 0 0;
+}
+
+.articles {
+  max-width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  fieldset {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+  }
+}
+.articles-list {
+  li {
+    font-size: 1.5em;
+  }
+}
+
+.articles-list-link {
+  margin-left: 1em;
+}
+.row.flash {
+  padding-top: 1rem;
+  display: inline-block;
+  line-height: 1.5rem;
+  text-align: center;
+  button {
+    font-size: 2rem;
+    color: $off-white;
+  }
+}
+
+.row.flash.success {
+  background-color: #8BC34A;
+}
+.row.flash.notice {
+  background-color: #FFC107;
+}
+.row.flash.error {
+  color: $off-white;
+  background-color: #F44336;
+}

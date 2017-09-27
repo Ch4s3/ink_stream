@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 10.times do
-  name = Faker::Company.name.downcase.tr(" ","_").tr(",","")
-  site_url = "https://#{name}.test"
+  name = "#{Faker::Address.unique.city} #{Faker::Hipster.unique.word.capitalize}"
+  url_safe_name = name.downcase.tr(" ","_").tr(",","")
+  site_url = "https://www.#{url_safe_name}.test"
   params = {
     name: name,
     site: site_url,
@@ -18,11 +19,12 @@
 
   20.times do
     title = Faker::Hipster.sentence
-
+    date = Random.rand(0..14).days.ago.to_date
     Article.create(
       title: title,
       link: "#{site_url}/#{CGI::escape(title)}",
-      date:  Random.rand(0..14).days.ago.to_date,
+      date:  date,
+      excerpt: Faker::Lorem.paragraph(36),
       publication: pub
     )
   end

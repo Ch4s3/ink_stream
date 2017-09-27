@@ -1,0 +1,14 @@
+<%- if flash.keys.length > 0 %>
+  <%- flash.each do |flash| %>
+    <div class="row flash <%= flash[0] %>">
+      <%= flash[1] %>
+      <button class="button button-clear dismiss-flash" value="x">x</button>
+      <script>
+        document.querySelectorAll('.dismiss-flash')[0].onclick = function(e){
+          const flashEl = e.target.parentNode;
+          flashEl.parentNode.removeChild(flashEl);
+        }
+      </script>
+    </div>
+  <% end %>
+<% end %>

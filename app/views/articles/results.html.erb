@@ -1,11 +1,32 @@
 <%- if @articles.length > 0 %>
-  <%- @articles.each do |article| %>
-    <% cache article do %>
-      <div class="row">
-        <%= link_to(article.title, article_path(article.id)) %>
-      </div>
+  <div class="articles articles-list">
+    <ul>
+      <%- @articles.each do |article| %>
+        <li>
+          <%= link_to(article.title, article_path(article.uuid)) %>
+        </li>
+      <% end %>
+    </ul>
+    <%- if @search_offset >= 10 %>
+      <%= link_to("< back 10", 
+        articles_results_path(articles_search_form: { 
+          publications: @publications, 
+          title: @title_search, 
+          search_offset: (@search_offset - 10).to_s }),
+        class: "articles-list-link") %>
     <% end %>
-  <% end %>
+    <%- if @articles.length == 10 %>
+      <%= link_to("next 10 >", 
+        articles_results_path(articles_search_form: { 
+          publications: @publications, 
+          title: @title_search, 
+          search_offset: (@search_offset + 10).to_s }), 
+        class: "articles-list-link") %>
+    <% end %>
+    <%= link_to("back to search", root_url(), class: "articles-list-link")%>
+  </div>
 <%- else %>
   <h4>No Results Found<h4>
+  <%= link_to("back to search", root_url(), class: "articles-list-link")%>
 <% end %>
+
