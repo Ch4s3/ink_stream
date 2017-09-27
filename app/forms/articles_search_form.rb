@@ -11,6 +11,8 @@ class ArticlesSearchForm < FormObject
   private
 
   def top_ten
-    Publication.select(:name).limit(10).map(&:name).push('')
+    Rails.cache.fetch('publications/top_ten', expires_in: 1.hour) do
+      Publication.limit(10).pluck(:name).push('')
+    end
   end
 end
