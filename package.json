@@ -1,6 +1,7 @@
 {
   "name": "ink_stream",
   "private": true,
+  "engines" : { "yarn": "1.1.0" },
   "dependencies": {
     "@rails/webpacker": "^3.0.1",
     "babel-preset-react": "^6.24.1",
