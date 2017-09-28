@@ -4,9 +4,11 @@ rvm:
  - 2.3
 cache: 
   - bundler
-addons:
-  postgresql: 
-    - "9.6"
+services:
+  postgres:
+    image: postgres:9.6
+    ports:
+      - "5432"
 env:
   global:
     - RAILS_ENV=test
