@@ -1,24 +1,29 @@
 dist: trusty
 language: ruby
 rvm:
-- 2.3
+  - 2.3
 cache:
-- bundler
+  - bundler
 services:
   postgres:
     image: postgres:9.6
     ports:
-    - '5432'
+      - '5432'
 env:
   global:
-  - RAILS_ENV=test
+    - RAILS_ENV=test
+    - PRONTO_PULL_REQUEST_ID=$TRAVIS_PULL_REQUEST
 before_script:
-- bundle exec rake db:create db:migrate --trace
+  - bundle exec rake db:create db:migrate --trace
 script:
-- bundle exec rspec
+  - PRONTO_GITHUB_ACCESS_TOKEN=$GITHUB_ACCESS_TOKEN pronto run -f github_pr -c origin/master
+  - bundle exec rspec
 deploy:
   provider: heroku
   api_key:
     secure: 1gXJ3hL4X2Gxlu80huwf/C46zZC42dMt1tuJuIHt4+eCDeo8zbocwprJqD18HXwjGwgZl8KpWceq4yERIRphrhWSYYYMJGQvAvkwUWJHe9TmTfD+w+nSlDg933y0dnkCAIiVVdqzN9YsAyK9t+s6MSmZY260mWoNLz8k+3wnRTcDu+qMq6aQ0U6CnSQPv34ipbGYjo+0S++aL1M6Z37Ug8fPiMksV/O8uDWIkJWehEOKdgX19LhXgr1ISxTmTBFNJLwFMJJjw+VtfXLHo/QokaH3b9T1sQZrp+0Etc0QgYKCImZrWBTNhAVdZaRCJbDLxwkYY85eZF/ULud9rWNZmngrIZ+bltWvQyRRxtqMnvM4E3KrWw1MVFwOwwPdFXXEPvXi7Q4LTCtM8B3MPIyoJ6dlmQd+y/im9QwzU4ou35Rh8vjen4yIwtPVpsQI+kSUCmyQDXMeLlmrxrGscc0rqqXkf3S/UV+hauF46bzVGhHY3HMZLs1sfzeWGz7R/NrqL1qOxgr74mdZ1pUVC8tHk5/shbV6VxVJHIPBgBTVGnQEl601JNrsB/GkhsyXkoSnF6dlKNM0R57yEOXAjC1Z4lbOzPJBFVAL3Xxa0Zf/BWjs4/tW631kTDd5zlaarnhMRxwgYPzyLDSUZJRBWoZrDu6B1dpyuRpy4Lsyx315d/Q=
   app: ink-stream
   run: "rake db:migrate"
+
+
+  
