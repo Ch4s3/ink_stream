@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Ch4s3/ink_stream.svg?branch=master)](https://travis-ci.org/Ch4s3/ink_stream)
 # README
 
 This README would normally document whatever steps are necessary to get the
