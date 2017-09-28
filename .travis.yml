@@ -16,7 +16,7 @@ env:
 before_script:
   - bundle exec rake db:create db:migrate --trace
 script:
-  - PRONTO_GITHUB_ACCESS_TOKEN=$PRONTO_TOKEN pronto run -f github_pr -c origin/master
+  - pronto run -f github_pr -c origin/master
   - bundle exec rspec
 deploy:
   provider: heroku
