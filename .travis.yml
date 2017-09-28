@@ -1,15 +1,16 @@
+dist: trusty
 language: ruby
 rvm:
  - 2.3
 cache: 
   - bundler
-services:
-  - postgresql
 addons:
   postgresql: 
     - "9.6"
+env:
+  global:
+    - RAILS_ENV=test
 before_script:
-  - psql -c 'create database ink_stream_test;' -U postgres
-  - RAILS_ENV=test bundle exec rake db:create db:migrate --trace
+  - bundle exec rake db:create db:migrate --trace
 script: 
   - bundle exec rspec  
