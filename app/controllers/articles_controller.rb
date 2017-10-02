@@ -1,7 +1,11 @@
 class ArticlesController < ApplicationController
   before_action :find_article, only: [:show]
   before_action :validate_search, only: [:results]
+  before_action :authenticate_user!, only: %i[new create]
 
+  def new
+    @article = Article.new
+  end
 
   def results
     @publications = articles_search_params[:publications]
@@ -12,7 +16,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    unless @article
+    if @article.nil?
       flash[:error] = 'The requested article does not exist'
       redirect_to root_url
     end

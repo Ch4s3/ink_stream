@@ -36,15 +36,9 @@ gem 'skylight'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'brakeman', :require => false
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'coveralls', require: false
   gem 'faker'
-  gem 'pronto'
-  gem 'pronto-fasterer', require: false
-  gem 'pronto-flay', require: false
-  gem 'pronto-reek', require: false
-  gem 'pronto-rubocop', require: false
   gem 'pry-byebug', require: false
   gem 'pry-clipboard'
   gem 'pry-rails'
@@ -56,8 +50,15 @@ group :development, :test do
 end
 
 group :development do
+  gem 'brakeman', require: false
   gem 'bullet'
+  gem 'guard-rspec', require: false
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'pronto'
+  gem 'pronto-fasterer', require: false
+  gem 'pronto-flay', require: false
+  gem 'pronto-reek', require: false
+  gem 'pronto-rubocop', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'

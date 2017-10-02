@@ -1,2 +1,23 @@
-<h1>Articles#new</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
+<div class="articles">
+  <h2>Submit a New Article</h2>
+  <%= form_for(@article) do |f| %>
+    <p>
+      The Article link is required, but the other fields are
+      optional and will be inferred if left blank. At the
+      moment only a limited number of publications are allowed
+      to ensure everything is parsed correctly and to limit
+      spam.
+    </p>
+    <fieldset>
+      <%= f.fields_for(:publication) do |pub|%>
+        <%= pub.label(:publication, "Available Publications")%>
+        <%= pub.collection_select(:publication_id, Publication.all, :id, :name, include_blank: true) %>
+      <% end %>
+      <%= f.label(:link, "Article Link")%>
+      <%= f.text_field(:link, required: true)%>
+      <%= f.label(:title, "Article Title")%>
+      <%= f.text_field(:title)%>
+      <%= f.submit("Submit", class: "button button-outline")%>
+    </fieldset>
+  <% end %>
+</div>
