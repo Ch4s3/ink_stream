@@ -6,3 +6,6 @@ AllCops:
     - 'config/**/*'
     - 'node_modules/**/*'
     - 'script/**/*'
+
+Metrics/LineLength:
+  Max: 100
