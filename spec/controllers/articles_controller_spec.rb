@@ -3,23 +3,32 @@ require 'rails_helper'
 RSpec.describe ArticlesController, type: :controller do
 
   describe 'GET #new' do
-    it 'returns http success' do
+    let(:user) { User.create(email: 'test@is.test', password: '1234Password') }
+
+    it 'returns http success for signed in users' do
+      sign_in(user)
       get :new
       expect(response).to have_http_status(:success)
     end
-  end
 
-  describe 'GET #index' do
-    it 'returns http success' do
-      get :index
-      expect(response).to have_http_status(:success)
+    it 'redirects without sign in' do
+      get :new
+      expect(response).to have_http_status(302)
     end
   end
 
   describe 'GET #create' do
-    it 'returns http success' do
+    let(:user) { User.create(email: 'test@is.test', password: '1234Password') }
+
+    it 'returns http success for signed in users' do
+      sign_in(user)
       get :create
       expect(response).to have_http_status(:success)
+    end
+
+    it 'redirects without sign in' do
+      get :new
+      expect(response).to have_http_status(302)
     end
   end
 
