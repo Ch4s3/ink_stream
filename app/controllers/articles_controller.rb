@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    if @article.nil?
+    unless @article
       flash[:error] = 'The requested article does not exist'
       redirect_to root_url
     end
