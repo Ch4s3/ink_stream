@@ -32,6 +32,7 @@ gem 'turbolinks', '~> 5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'sentry-raven'
 gem 'skylight'
 
 group :development, :test do
