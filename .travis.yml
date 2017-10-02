@@ -16,7 +16,7 @@ env:
 before_script:
   - bundle exec rake db:create db:migrate --trace
 script:
-  - 'if [ "$TRAVIS_PULL_REQUEST" == false ]; then echo "TRAVIS_PULL_REQUEST is unset, skipping Pronto"; else bundle exec pronto run -f github_pr -c origin/master; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" == false ]; then echo "TRAVIS_PULL_REQUEST is unset, skipping Pronto"; else bundle exec pronto run -f github_pr -c origin/develop; fi'
   - bundle exec rspec
 deploy:
   provider: heroku
