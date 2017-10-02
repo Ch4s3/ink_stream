@@ -1,0 +1,10 @@
+exclude_paths:
+  - '/Guardfile'
+  - 'db'
+  - 'bin'
+  - 'config'
+  - 'node_modules'
+
+"ink_stream/app/controllers":
+  InstanceVariableAssumption:
+    enabled: false

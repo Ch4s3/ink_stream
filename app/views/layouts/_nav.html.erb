@@ -1,0 +1,14 @@
+<nav>
+  <h1>ink stream</h1>
+  <div class="nav-links">
+    <ul>
+      <li>
+        <%- if user_signed_in? %>
+          <%= link_to("sign out", destroy_user_session_path, method: :delete)%>
+        <%- else %>
+          <%= link_to("sign in", new_user_session_path)%>
+        <% end %>
+        </li>
+    </ul>
+  </div>
+</nav>

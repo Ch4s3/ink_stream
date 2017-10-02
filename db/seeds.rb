@@ -5,7 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+User.create(
+  email: 'test@is.test',
+  password: '1234Password'
+)
 10.times do
   name = "#{Faker::Address.unique.city} #{Faker::Hipster.unique.word.capitalize}"
   url_safe_name = name.downcase.tr(" ","_").tr(",","")

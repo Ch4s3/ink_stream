@@ -16,18 +16,17 @@ main {
   max-width: 80vw;
   margin-left: auto;
   margin-right: auto;
-  fieldset {
+  h2, p, fieldset {
     margin-left: auto;
     margin-right: auto;
     width: 75%;
-  }
+  } 
 }
 .articles-list {
   li {
     font-size: 1.5em;
   }
 }
-
 .articles-list-link {
   margin-left: 1em;
 }
@@ -41,14 +40,44 @@ main {
     color: $off-white;
   }
 }
-
+.row.flash {
+  color: $off-white;
+}
 .row.flash.success {
   background-color: #8BC34A;
 }
-.row.flash.notice {
+.row.flash.notice, .alert {
   background-color: #FFC107;
 }
+
 .row.flash.error {
-  color: $off-white;
   background-color: #F44336;
+}
+
+nav {
+  color: $off-white;
+  min-height: 6rem;
+  background: linear-gradient(to right, $secondary-color, $primary-color);
+  padding: 2rem 0 2rem 0;
+  h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-left: 33%;
+    display: inline;
+  }
+  .nav-links { 
+    float: right;
+    ul { margin-bottom: 0; }
+    ul li { 
+      list-style: none;
+      padding-top: 1rem;  
+    }
+    a {
+      color: $off-white;
+      margin:0 1rem;
+    }
+    a:hover {
+      color: #311B92;
+    }
+  }
 }
