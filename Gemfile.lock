@@ -292,6 +292,8 @@ GEM
     sawyer (0.8.1)
       addressable (>= 2.3.5, < 2.6)
       faraday (~> 0.8, < 1.0)
+    sentry-raven (2.6.3)
+      faraday (>= 0.7.6, < 1.0)
     sexp_processor (4.10.0)
     shellany (0.0.1)
     simplecov (0.14.1)
@@ -381,6 +383,7 @@ DEPENDENCIES
   rspec-benchmark
   rspec-rails (~> 3.6)
   sass-rails (~> 5.0)
+  sentry-raven
   skylight
   spring
   spring-watcher-listen (~> 2.0.0)

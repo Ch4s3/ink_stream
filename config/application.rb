@@ -27,5 +27,9 @@ module InkStream
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    Raven.configure do |config|
+      config.dsn = 'https://5a196750ea4e4a9f8b114b30f6d4e2c5:1bc5a9be0168407cb16cdf79350b6f44@sentry.io/224662'
+    end
   end
 end
