@@ -1,6 +1,7 @@
 exclude_paths:
   - '/Guardfile'
   - 'db'
+  - 'spec'
   - 'bin'
   - 'config'
   - 'node_modules'
