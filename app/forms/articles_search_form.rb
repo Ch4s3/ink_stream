@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Simple class for bilding search forms
 class ArticlesSearchForm < FormObject
   attr_accessor :title, :publications, :search_offset
