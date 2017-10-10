@@ -8,6 +8,19 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def create
+    publication = Publication.find_by(id: article_params['publication']['publication_id'])
+    @article =  Article.new(title: article_params['title'], link: article_params['link'],
+                            publication: publication)
+    if @article.save
+      ArticleWorker.perform_async(@article.link, @article.id)
+      message = 'The article has been created and an excerpt is being generated'
+      flash_and_redirect(message, :success)
+    else
+      flash_and_redirect(@article.errors)
+    end
+  end
+
   def results
     @publications = search_params[:publications]
     @title_search = search_params[:title]
@@ -38,6 +51,11 @@ class ArticlesController < ApplicationController
 
   def find_article
     @article = Article.find_by(uuid: show_params['id'])
+  end
+
+  def article_params
+    params.require(:article)
+          .permit(:title, :link, publication: :publication_id)
   end
 
   def show_params
