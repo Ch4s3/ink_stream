@@ -67,8 +67,10 @@ end
 
 group :test do
   gem 'coveralls', require: false
+  gem 'fakeredis', require: 'fakeredis/rspec'
   gem 'rspec-benchmark'
   gem 'rspec-rails', '~> 3.6'
+  gem 'rspec-sidekiq'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
