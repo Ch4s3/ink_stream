@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
-
   describe 'GET #new' do
     let(:user) { User.create(email: 'test@is.test', password: '1234Password') }
 
@@ -19,11 +18,17 @@ RSpec.describe ArticlesController, type: :controller do
 
   describe 'GET #create' do
     let(:user) { User.create(email: 'test@is.test', password: '1234Password') }
-
+    let(:post_params) do
+      { article: {
+        title: 'Some Title', link: 'www.test.test',
+        publication: { publication_id: 1 }
+      } }
+    end
     it 'returns http success for signed in users' do
       sign_in(user)
-      get :create
-      expect(response).to have_http_status(:success)
+      post :create, params: post_params
+      expect(response).to have_http_status(302)
+      expect(Article.last.title).to eq('Some Title')
     end
 
     it 'redirects without sign in' do
