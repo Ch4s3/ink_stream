@@ -5,13 +5,13 @@ module NyTimes
     def initialize(response_body, article_path, article_id = nil)
       @article_path = article_path
       @response_body = response_body
-      parse_response
+      @xml = ::Nokogiri::HTML(@response_body)
       article_hash = build_article_hash
       @article =
         if article_id
-          update_article(article_hash, article_id)
+          Article.update_with_hash_by_id(article_hash, article_id)
         else
-          create_article(article_hash)
+          Article.create(article_hash)
         end
     end
 
@@ -21,41 +21,21 @@ module NyTimes
     def build_article_hash
       {
         title: article_title,
-        publication: new_york_times,
+        publication: Publication.new_york_times,
         date: article_published_on,
-        excerpt: article_excerpt(article_body),
+        excerpt: article_excerpt,
         link: "https://www.nytimes.com#{@article_path}"
       }
     end
 
     private
 
-    def update_article(article_hash, article_id)
-      article = Article.find_by(id: article_id)
-      article.update(article_hash)
-    end
-
-    def create_article(article_hash)
-      Article.create(article_hash)
-    end
-
-    def parse_response
-      @xml = ::Nokogiri::HTML(@response_body)
-    end
-
-    def new_york_times
-      Publication.find_by(name: 'New York Times')
-    end
-
     def article_title
       @xml.css('h1.headline').text.split('SHARE')[0]
     end
 
-    def article_body
-      @xml.css('.article-body').text
-    end
-
-    def article_excerpt(article_body)
+    def article_excerpt
+      article_body = @xml.css('.article-body').text
       article_body.split(' ')[0..15].join(' ')
     end
 
