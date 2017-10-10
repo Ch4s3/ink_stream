@@ -69,6 +69,7 @@ group :test do
   gem 'coveralls', require: false
   gem 'fakeredis', require: 'fakeredis/rspec'
   gem 'rspec-benchmark'
+  gem 'mutant-rspec'
   gem 'rspec-rails', '~> 3.6'
   gem 'rspec-sidekiq'
 end
