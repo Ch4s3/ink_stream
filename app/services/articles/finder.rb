@@ -13,14 +13,11 @@ module Articles
       cache_key = "articles/#{publication_name}/#{article_title}/offset=#{offset}"
       Rails.cache.fetch(cache_key, expires_in: 10.minutes) do
         if publication_name.strip.empty?
-          Article.fuzzy_title(article_title)
-                 .select(:title, :id, :uuid).order('id desc')
-                 .limit(10).offset(offset)
+          Article.fuzzy_title(article_title).ten_ids_with_offset(offset)
         else
           Article.joins(:publication).fuzzy_title(article_title)
                  .where('publications.name = ?', publication_name)
-                 .select(:title, :id, :uuid).order('id desc')
-                 .limit(10).offset(offset)
+                 .ten_ids_with_offset(offset)
         end
       end
     end

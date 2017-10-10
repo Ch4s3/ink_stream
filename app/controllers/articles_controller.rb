@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Controller for Articles and related search functionality
 class ArticlesController < ApplicationController
   before_action :find_article, only: [:show]

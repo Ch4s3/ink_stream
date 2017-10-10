@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module NyTimes
   # A builder for articles that come from the New York Times
   class Builder

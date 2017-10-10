@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module NyTimes
   # HTTParty client for the NewYork Times that takes an article path
   # and get's the text of the article
