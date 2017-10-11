@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/tjchambers/rspec-kickstarter.git
+  revision: e12df12a7f9e8fa92f6c915ecff95ada8002e26d
+  specs:
+    rspec-kickstarter (1.0.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -467,6 +473,7 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.4)
   rspec-benchmark
+  rspec-kickstarter!
   rspec-rails (~> 3.6)
   rspec-sidekiq
   sass-rails (~> 5.0)

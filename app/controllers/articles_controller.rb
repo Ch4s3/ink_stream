@@ -2,8 +2,8 @@
 
 # Controller for Articles and related search functionality
 class ArticlesController < ApplicationController
-  before_action :find_article, only: [:show]
-  before_action :validate_search, only: [:results]
+  before_action :find_article, only: :show
+  before_action :validate_search, only: :results
   before_action :authenticate_user!, only: %i[new create]
 
   def new
@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
       message = 'The article has been created and an excerpt is being generated'
       flash_and_redirect(message, :success)
     else
-      flash_and_redirect(@article.errors)
+      flash_and_redirect(@article.errors, :error, :back)
     end
   end
 
@@ -40,11 +40,6 @@ class ArticlesController < ApplicationController
   end
 
   private
-
-  def flash_and_redirect(message, flash_type = :error, redirect_path = root_url)
-    flash[flash_type] = message
-    redirect_to(redirect_path)
-  end
 
   def validate_search
     error_message = 'You must include a title to search for articles'

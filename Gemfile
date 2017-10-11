@@ -48,6 +48,7 @@ group :development do
   gem 'pronto-flay', require: false
   gem 'pronto-reek', require: false
   gem 'pronto-rubocop', require: false
+  gem 'rspec-kickstarter', git: 'https://github.com/tjchambers/rspec-kickstarter.git'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
