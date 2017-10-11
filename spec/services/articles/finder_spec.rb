@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Articles::Finder, type: :service do
-  let(:publication) { Publication.create(name: 'Some Pub') }
+  let(:publication) { Publication.create(name: 'Some Pub', site: 'https://news.test.test') }
   let!(:articles) do
     10.times do
       Article.create(title: Faker::Hipster.sentence, publication: publication)

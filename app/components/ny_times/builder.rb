@@ -23,7 +23,7 @@ module NyTimes
     def build_article_hash
       {
         title: article_title,
-        publication: Publication.new_york_times,
+        publication: Publication.new_york_times.first, # TODO: figure out why this can return > 1
         date: article_published_on,
         excerpt: article_excerpt,
         link: "https://www.nytimes.com#{@article_path}"
