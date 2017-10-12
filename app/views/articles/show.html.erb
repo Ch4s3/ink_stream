@@ -1,7 +1,9 @@
 <% cache @article do %>
   <div class='articles'>
-    <h1><%= @article.title %></h1>
-    <p><%= @article.excerpt %></p>
+    <div class='article'>
+      <h1><%= @article.title %></h1>
+      <p><%= @article.excerpt %></p>
+    </div>
     <div class='bottom-links'>
       <%= link_to('back to search', root_url(), class: 'articles-list-link')%>
     </div>

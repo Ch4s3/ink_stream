@@ -1,10 +1,10 @@
 .wrapper {
+  position: absolute;
   display: grid;
   width: 100vw;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 10%, auto, auto,10%;
   grid-template-rows: auto;
   grid-gap: 1rem;
-  // grid-auto-rows: 16rem;
   grid-template-areas: 
     "t t t t"
     ". m m ."
