@@ -7,14 +7,32 @@ body {
   background-color: $white
 }
 main {
-  padding: 2rem 0 2rem 0;
+  padding: 0 0 2rem 0;
 }
 
 .content {
   margin: 4rem 0 0 0;
 }
+.search-background {
+  z-index: -1;
+  grid-row-start: m-start;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  height: 45rem;
+  background: linear-gradient(to right, $secondary-color, #4EB9FF, #429cd6, #426bd6);
+  transform: translateY(-10rem) skewY(2deg);
+  transform-origin: top right;
+}
 
+.new_articles_search_form {
+  margin-top: 3rem;
+}
+
+.article {
+  max-width: 80vw;
+}
 .articles, .publications {
+  z-index: 1;
   grid-area: m;
 }
 .articles-list {
@@ -62,22 +80,26 @@ button.button.dismiss-flash:hover {
 }
 
 nav {
+  background-color: $white;
   color: $primary-color;
-  height: 3rem;
+  height: 7rem;
   width: 100vw;
 }
 .nav-container{
-  height: 3rem;
+  
+  height: 7rem;
   max-width: 1000px;
-  padding: 2rem 0 2rem 0;
+  // padding: 2rem 0 2rem 0;
   margin: 0 auto;
 }
 nav .logo {
+  margin-top: 2rem;
   float: left;
   margin-left: 5rem;
   height: 4rem;
 }
 nav p {
+  margin-top: 2rem;
   padding-left: 2rem;
   line-height: 3rem;
   font-size: 3rem;
@@ -90,20 +112,30 @@ nav .nav-links {
     padding: 0px;
     margin: 0px;
     text-align: center;
-    display:inline-block;
+    display: inline-block;
     vertical-align:top;
   }
   li { 
     list-style: none;
     padding: 0; 
-    display: inline; 
+    display: inline-block; 
+  }
+  li.log-in-log-out {
+    background-color: $primary-color;
+    height: 7rem;
+    a { 
+      line-height: 7rem;
+      color: $white; 
+    }
+    
+  }
+  li.log-in-log-out:hover { 
+    background-color: $white;
+    a { color: $primary-color; } 
   }
   li a {
     color: $primary-color;
     line-height: 3rem;
     margin:0 1rem;
-  }
-  li a:hover {
-    color: #311B92;
   }
 }
