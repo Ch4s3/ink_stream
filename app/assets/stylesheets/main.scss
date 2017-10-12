@@ -1,11 +1,13 @@
-$primary-color: #29B6F6;
-$secondary-color: #311B92;
-$off-white: #fffefe;
+$primary-color: #00080C;
+$secondary-color: #4EB9FF;
+$yellow: #FFCE47;
+$magenta: #FF4181;
+$white: #fff;
 body {
-  background-color: #fffefe
+  background-color: $white
 }
 main {
-  padding: 2rem;
+  padding: 2rem 0 2rem 0;
 }
 
 .content {
@@ -13,14 +15,7 @@ main {
 }
 
 .articles, .publications {
-  max-width: 80vw;
-  margin-left: auto;
-  margin-right: auto;
-  h2, p, fieldset {
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
-  } 
+  grid-area: m;
 }
 .articles-list {
   li {
@@ -30,54 +25,85 @@ main {
 .articles-list-link {
   margin-left: 1em;
 }
-.row.flash {
+
+.bottom-links {
+  font-weight: 400;
+  min-height: 2rem;
+  padding: 0.5rem;
+  grid-area: b;
+}
+.flash {
+  grid-area: t;
   padding-top: 1rem;
   display: inline-block;
   line-height: 1.5rem;
   text-align: center;
   button {
     font-size: 2rem;
-    color: $off-white;
+    color: $white;
   }
 }
-.row.flash {
-  color: $off-white;
+.flash {
+  color: $white;
 }
-.row.flash.success {
-  background-color: #8BC34A;
+.flash.success, .notice {
+  background-color: $secondary-color;
 }
-.row.flash.notice, .alert {
-  background-color: #FFC107;
+.flash.alert {
+  background-color: $yellow;
 }
 
-.row.flash.error {
-  background-color: #F44336;
+.flash.error {
+  background-color: $magenta;
+}
+
+button.button.dismiss-flash:hover {
+  color: $white;
 }
 
 nav {
-  color: $off-white;
-  min-height: 6rem;
-  background: linear-gradient(to right, $secondary-color, $primary-color);
+  color: $primary-color;
+  height: 3rem;
+  width: 100vw;
+}
+.nav-container{
+  height: 3rem;
+  max-width: 1000px;
   padding: 2rem 0 2rem 0;
-  h1 {
-    font-size: 3rem;
-    font-weight: 400;
-    margin-left: 33%;
-    display: inline;
+  margin: 0 auto;
+}
+nav .logo {
+  float: left;
+  margin-left: 5rem;
+  height: 4rem;
+}
+nav p {
+  padding-left: 2rem;
+  line-height: 3rem;
+  font-size: 3rem;
+  font-weight: 400;
+  display: inline-block;
+}
+nav .nav-links { 
+  float: right;
+  ul { 
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    display:inline-block;
+    vertical-align:top;
   }
-  .nav-links { 
-    float: right;
-    ul { margin-bottom: 0; }
-    ul li { 
-      list-style: none;
-      padding-top: 1rem;  
-    }
-    a {
-      color: $off-white;
-      margin:0 1rem;
-    }
-    a:hover {
-      color: #311B92;
-    }
+  li { 
+    list-style: none;
+    padding: 0; 
+    display: inline; 
+  }
+  li a {
+    color: $primary-color;
+    line-height: 3rem;
+    margin:0 1rem;
+  }
+  li a:hover {
+    color: #311B92;
   }
 }
