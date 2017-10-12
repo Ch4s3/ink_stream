@@ -1,5 +1,5 @@
 <%- if @articles.length > 0 %>
-  <div class="articles articles-list">
+  <div class='articles articles-list'>
     <ul>
       <%- @articles.each do |article| %>
         <li>
@@ -7,26 +7,30 @@
         </li>
       <% end %>
     </ul>
-    <%- if @search_offset >= 10 %>
-      <%= link_to("< back 10", 
-        articles_results_path(articles_search_form: { 
-          publications: @publications, 
-          title: @title_search, 
-          search_offset: (@search_offset - 10).to_s }),
-        class: "articles-list-link") %>
-    <% end %>
-    <%- if @articles.length == 10 %>
-      <%= link_to("next 10 >", 
-        articles_results_path(articles_search_form: { 
-          publications: @publications, 
-          title: @title_search, 
-          search_offset: (@search_offset + 10).to_s }), 
-        class: "articles-list-link") %>
-    <% end %>
-    <%= link_to("back to search", root_url(), class: "articles-list-link")%>
+    <div class='bottom-links'>
+      <%- if @search_offset >= 10 %>
+        <%= link_to('< back 10', 
+          articles_results_path(articles_search_form: { 
+            publications: @publications, 
+            title: @title_search, 
+            search_offset: (@search_offset - 10).to_s }),
+          class: 'articles-list-link') %>
+      <% end %>
+      <%- if @articles.length == 10 %>
+        <%= link_to('next 10 >', 
+          articles_results_path(articles_search_form: { 
+            publications: @publications, 
+            title: @title_search, 
+            search_offset: (@search_offset + 10).to_s }), 
+          class: 'articles-list-link') %>
+      <% end %>
+      <%= link_to('back to search', root_url(), class: 'articles-list-link')%>
+    </div>
   </div>
 <%- else %>
   <h4>No Results Found<h4>
-  <%= link_to("back to search", root_url(), class: "articles-list-link")%>
+  <div class='bottom-links'>
+    <%= link_to('back to search', root_url(), class: 'articles-list-link')%>
+  </div>
 <% end %>
 

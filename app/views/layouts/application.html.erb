@@ -9,13 +9,11 @@
 
   <body>
     <%= render "layouts/nav"%>
-    <%= render "layouts/flash_message"%>
-    <div class="container">  
-      <main>
-        <div class="content">
-          <%= yield %>
-        </div>
-      </main>
-    </div>
+    <main role="main">
+      <div class="wrapper">
+        <%= render "layouts/flash_message"%>
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>
