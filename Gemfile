@@ -16,7 +16,7 @@ gem 'pg_query', '>= 0.9.0'
 gem 'pghero'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
-gem 'sentry-raven', '= 2.6.3'
+gem 'sentry-raven'
 gem 'sidekiq', '< 6'
 gem 'skylight'
 gem 'turbolinks', '~> 5'
@@ -48,6 +48,7 @@ group :development do
   gem 'pronto-flay', require: false
   gem 'pronto-reek', require: false
   gem 'pronto-rubocop', require: false
+  gem 'rspec-kickstarter', git: 'https://github.com/tjchambers/rspec-kickstarter.git'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'

@@ -16,7 +16,7 @@ RSpec.describe ArticlesController, type: :controller do
     end
   end
 
-  describe 'GET #create' do
+  describe 'POST #create' do
     let(:user) { User.create(email: 'test@is.test', password: '1234Password') }
     let(:post_params) do
       { article: {

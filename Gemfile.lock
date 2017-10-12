@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/tjchambers/rspec-kickstarter.git
+  revision: e12df12a7f9e8fa92f6c915ecff95ada8002e26d
+  specs:
+    rspec-kickstarter (1.0.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -355,7 +361,7 @@ GEM
     sawyer (0.8.1)
       addressable (>= 2.3.5, < 2.6)
       faraday (~> 0.8, < 1.0)
-    sentry-raven (2.6.3)
+    sentry-raven (2.7.1)
       faraday (>= 0.7.6, < 1.0)
     sexp_processor (4.10.0)
     shellany (0.0.1)
@@ -467,10 +473,11 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.4)
   rspec-benchmark
+  rspec-kickstarter!
   rspec-rails (~> 3.6)
   rspec-sidekiq
   sass-rails (~> 5.0)
-  sentry-raven (= 2.6.3)
+  sentry-raven
   sidekiq (< 6)
   skylight
   spring
