@@ -1,2 +1,16 @@
-<h1>Publication#new</h1>
-<p>Find me in app/views/publication/new.html.erb</p>
+<div class="publications">
+  <h2>Submit a New Publication</h2>
+  <%= form_for(@publication) do |f| %>
+    <p>
+      The name and site are required, but the other fields are
+      optional.
+    </p>
+    <fieldset>
+      <%= f.label(:site, "Publication Link")%>
+      <%= f.text_field(:site, required: true)%>
+      <%= f.label(:name, "Publication Name")%>
+      <%= f.text_field(:name, required: true)%>
+      <%= f.submit("Submit", class: "button button-outline")%>
+    </fieldset>
+  <% end %>
+</div>
