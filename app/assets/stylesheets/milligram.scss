@@ -1,4 +1,5 @@
 /*!
+ * Heavily modified from
  * Milligram v1.3.0
  * https://milligram.github.io
  *
@@ -26,26 +27,14 @@
    line-height: 1.9;
  }
  
- blockquote {
-   border-left: 0.3rem solid #d1d1d1;
-   margin-left: 0;
-   margin-right: 0;
-   padding: 1rem 1.5rem;
- }
- 
- blockquote *:last-child {
-   margin-bottom: 0;
- }
- 
  .button,
  button,
  input[type='button'],
- input[type='reset'],
  input[type='submit'] {
-   background-color: $primary-color;
-   border: 0.2rem solid $primary-color;
+   background-color: $white;
+   border: 0.2rem solid $white;
    border-radius: .4rem;
-   color: #fff;
+   color: $primary-color;
    cursor: pointer;
    display: inline-block;
    font-size: 1.1rem;
@@ -57,7 +46,6 @@
    text-align: center;
    text-decoration: none;
    text-transform: uppercase;
-   white-space: nowrap;
  }
  
  .button:focus, .button:hover,
@@ -65,20 +53,17 @@
  button:hover,
  input[type='button']:focus,
  input[type='button']:hover,
- input[type='reset']:focus,
- input[type='reset']:hover,
  input[type='submit']:focus,
  input[type='submit']:hover {
    background-color: #606c76;
    border-color: #606c76;
-   color: #fff;
+   color: $primary-color;
    outline: 0;
  }
  
  .button[disabled],
  button[disabled],
  input[type='button'][disabled],
- input[type='reset'][disabled],
  input[type='submit'][disabled] {
    cursor: default;
    opacity: .5;
@@ -89,21 +74,18 @@
  button[disabled]:hover,
  input[type='button'][disabled]:focus,
  input[type='button'][disabled]:hover,
- input[type='reset'][disabled]:focus,
- input[type='reset'][disabled]:hover,
  input[type='submit'][disabled]:focus,
  input[type='submit'][disabled]:hover {
-   background-color: $primary-color;
-   border-color: $primary-color;
+   background-color: $white;
+   border-color: $white;
  }
  
  .button.button-outline,
  button.button-outline,
  input[type='button'].button-outline,
- input[type='reset'].button-outline,
  input[type='submit'].button-outline {
    background-color: transparent;
-   color: $primary-color;
+   color: $white;
  }
  
  .button.button-outline:focus, .button.button-outline:hover,
@@ -111,13 +93,11 @@
  button.button-outline:hover,
  input[type='button'].button-outline:focus,
  input[type='button'].button-outline:hover,
- input[type='reset'].button-outline:focus,
- input[type='reset'].button-outline:hover,
  input[type='submit'].button-outline:focus,
  input[type='submit'].button-outline:hover {
    background-color: transparent;
-   border-color: $secondary-color;
-   color: $secondary-color;
+   border-color: $primary-color;
+   color: $primary-color;
  }
  
  .button.button-outline[disabled]:focus, .button.button-outline[disabled]:hover,
@@ -125,22 +105,19 @@
  button.button-outline[disabled]:hover,
  input[type='button'].button-outline[disabled]:focus,
  input[type='button'].button-outline[disabled]:hover,
- input[type='reset'].button-outline[disabled]:focus,
- input[type='reset'].button-outline[disabled]:hover,
  input[type='submit'].button-outline[disabled]:focus,
  input[type='submit'].button-outline[disabled]:hover {
    border-color: inherit;
-   color: $primary-color;
+   color: $white;
  }
  
  .button.button-clear,
  button.button-clear,
  input[type='button'].button-clear,
- input[type='reset'].button-clear,
  input[type='submit'].button-clear {
    background-color: transparent;
    border-color: transparent;
-   color: $primary-color;
+   color: $white;
  }
  
  .button.button-clear:focus, .button.button-clear:hover,
@@ -148,8 +125,6 @@
  button.button-clear:hover,
  input[type='button'].button-clear:focus,
  input[type='button'].button-clear:hover,
- input[type='reset'].button-clear:focus,
- input[type='reset'].button-clear:hover,
  input[type='submit'].button-clear:focus,
  input[type='submit'].button-clear:hover {
    background-color: transparent;
@@ -162,11 +137,9 @@
  button.button-clear[disabled]:hover,
  input[type='button'].button-clear[disabled]:focus,
  input[type='button'].button-clear[disabled]:hover,
- input[type='reset'].button-clear[disabled]:focus,
- input[type='reset'].button-clear[disabled]:hover,
  input[type='submit'].button-clear[disabled]:focus,
  input[type='submit'].button-clear[disabled]:hover {
-   color: $primary-color;
+   color: $white;
  }
  
  hr {
@@ -188,7 +161,7 @@
       -moz-appearance: none;
            appearance: none;
    background-color: transparent;
-   border: 0.2rem solid #d1d1d1;
+   border: 0.2rem solid $white;
    border-radius: .4rem;
    box-shadow: none;
    box-sizing: inherit;
@@ -216,7 +189,7 @@
  }
  
  select:focus {
-   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 29 14" width="29"><path fill="$primary-color" d="M9.37727 3.625l5.08154 6.93523L19.54036 3.625"/></svg>');
+   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 29 14" width="29"><path fill="$white" d="M9.37727 3.625l5.08154 6.93523L19.54036 3.625"/></svg>');
  }
  
  textarea {
@@ -225,6 +198,7 @@
  
  label,
  legend {
+   color: $white;
    display: block;
    font-size: 1.6rem;
    font-weight: 700;
