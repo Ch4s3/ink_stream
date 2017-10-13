@@ -29,6 +29,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'faker'
+  gem 'hirb'
   gem 'pry-byebug', require: false
   gem 'pry-clipboard'
   gem 'pry-rails'
@@ -40,18 +41,23 @@ end
 group :development do
   gem 'brakeman', require: false
   gem 'bullet'
+  gem 'fast_stack' # profiling
+  gem 'flamegraph' # profiling
   gem 'guard-bundler', require: false
   gem 'guard-rspec', require: false
   gem 'guard-rubocop'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'memory_profiler' # profiling
   gem 'pronto'
   gem 'pronto-fasterer', require: false
   gem 'pronto-flay', require: false
   gem 'pronto-reek', require: false
   gem 'pronto-rubocop', require: false
+  gem 'rack-mini-profiler'
   gem 'rspec-kickstarter', git: 'https://github.com/tjchambers/rspec-kickstarter.git'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'stackprof' # profiling
   gem 'web-console', '>= 3.3.0'
   gem 'yard'
 end

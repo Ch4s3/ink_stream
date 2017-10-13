@@ -8,7 +8,7 @@ if defined? Rack::Cors
               https://news.ink-stream.com
               http://news.ink-stream.com
           ]
-          resource '/assets/*'
+          resource '*', headers: :any, methods: %w[get post options]
       end
   end
 end

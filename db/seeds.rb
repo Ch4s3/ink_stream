@@ -20,7 +20,8 @@ User.create(
   }
   pub = Publication.create(params)
 
-  20.times do
+  random_number = Random.rand(200..500)
+  random_number.times do
     title = Faker::Hipster.sentence
     date = Random.rand(0..14).days.ago.to_date
     Article.create(
