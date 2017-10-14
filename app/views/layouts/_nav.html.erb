@@ -1,10 +1,18 @@
 <nav role='navigation'>
   <div class='nav-container'>
+    <button class='button button-clear nav-toggle' aria-label='toggle nav'>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 25" width="12" height="25">
+        <title>Menu</title>
+        <rect class="p1" fill="#231f20" x="3" width="5" height="6"></rect>
+        <rect class="p2" fill="#231f20" x="3" y="9.5" width="5" height="6"></rect>
+        <rect class="p3" fill="#231f20" x="3" y="19" width="5" height="6"></rect>
+      </svg>
+    </button>
     <%= link_to(root_url, class: 'logo-link', 'arial-label': 'home') do %>
       <%= image_tag('ink.svg', class: 'logo', alt: 'logo, ink drops') %>
     <% end %>
     <p>ink stream</p>
-    <div class='nav-links'>
+    <div class='top-menu nav-links'>
       <ul>
         <li class='log-in-log-out'>
           <%- if user_signed_in? %>
@@ -12,8 +20,11 @@
           <%- else %>
             <%= link_to('sign in', new_user_session_path, 'arial-label': 'sign in')%>
           <% end %>
-          </li>
+        </li>
       </ul>
+    </div>
+    <div class='mobile-menu'>
+      <div><div>
     </div>
   </div>
 </nav>

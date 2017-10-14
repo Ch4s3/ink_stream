@@ -6,8 +6,14 @@ $white: #fff;
 body {
   background-color: $white
 }
+
 main {
   padding: 0 0 2rem 0;
+}
+
+.turbolinks-progress-bar {
+  height: 1rem;
+  background-color: $magenta;
 }
 
 .content {
@@ -77,65 +83,4 @@ main {
 
 button.button.dismiss-flash:hover {
   color: $white;
-}
-
-nav {
-  background-color: $white;
-  color: $primary-color;
-  height: 7rem;
-  width: 100vw;
-}
-.nav-container{
-  
-  height: 7rem;
-  max-width: 1000px;
-  // padding: 2rem 0 2rem 0;
-  margin: 0 auto;
-}
-nav .logo {
-  margin-top: 2rem;
-  float: left;
-  margin-left: 5rem;
-  height: 4rem;
-}
-nav p {
-  margin-top: 2rem;
-  padding-left: 2rem;
-  line-height: 3rem;
-  font-size: 3rem;
-  font-weight: 400;
-  display: inline-block;
-}
-nav .nav-links { 
-  float: right;
-  ul { 
-    padding: 0px;
-    margin: 0px;
-    text-align: center;
-    display: inline-block;
-    vertical-align:top;
-  }
-  li { 
-    list-style: none;
-    padding: 0; 
-    display: inline-block; 
-  }
-  li.log-in-log-out {
-    background-color: $primary-color;
-    height: 7rem;
-    a { 
-      line-height: 7rem;
-      color: $white; 
-    }
-    
-  }
-  li.log-in-log-out:hover { 
-    background-color: $white;
-    a { color: $primary-color; } 
-  }
-  li a {
-    color: $primary-color;
-    line-height: 3rem;
-    margin:0 1rem;
-  }
 }

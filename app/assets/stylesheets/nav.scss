@@ -1,0 +1,115 @@
+nav {
+  background-color: $white;
+  color: $primary-color;
+  height: 7rem;
+  width: 100vw;
+}
+.nav-container{
+  height: 7rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+nav .logo {
+  margin-top: 2rem;
+  margin-left: 5rem;
+  height: 4rem;
+}
+nav p {
+  padding-left: 2rem;
+  line-height: 3rem;
+  font-size: 3rem;
+  font-weight: 400;
+  display: inline;
+  position: relative;
+  bottom: 1rem;
+}
+nav .nav-links { 
+  float: right;
+  ul { 
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    display: inline-block;
+    vertical-align:top;
+  }
+  li { 
+    list-style: none;
+    padding: 0; 
+    display: inline-block; 
+  }
+  li.log-in-log-out {
+    background-color: $primary-color;
+    height: 7rem;
+    a { 
+      line-height: 7rem;
+      color: $white; 
+    }
+    
+  }
+  li.log-in-log-out:hover { 
+    background-color: $white;
+    a { color: $primary-color; } 
+  }
+  li a {
+    color: $primary-color;
+    line-height: 3rem;
+    margin:0 1rem;
+  }
+}
+
+nav .nav-toggle {
+  visibility: hidden;
+}
+
+nav .mobile-menu {
+  visibility: hidden;
+}
+
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2){
+  nav .logo {
+    height: 5rem;
+  }
+  nav p {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+  .nav-container{
+    height: 9rem;
+  }
+  nav .nav-links {
+    visibility: hidden;
+  }
+  nav .nav-toggle {
+    display: inline;
+    visibility: visible;
+    position: relative;
+    bottom: 1.5rem;
+  }
+
+  nav .mobile-menu {
+    background-color: $primary-color;
+    z-index: 9999;
+    position: fixed;
+    height: 100vh;
+    width: 30em;
+    top: 0;
+    left: -30em;
+    
+  }
+
+  nav .mobile-menu.active {
+    visibility: visible;
+    transform: translateX(30em);
+    -webkit-transition: transform 0.3s ease-in;
+    transition: transform 0.3s ease-in;
+  }
+
+  .wrapper.slide-right {
+    transform: translateX(30em);
+    -webkit-transition: transform 0.3s ease-in;
+    transition: transform 0.3s ease-in;
+  }
+}
