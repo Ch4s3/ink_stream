@@ -11,6 +11,17 @@ main {
   padding: 0 0 2rem 0;
 }
 
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  transition: background 0.35s ease;
+  background-color: rgba(0,0,0,0.5); /*dim the background*/
+}
+
 .turbolinks-progress-bar {
   height: 1rem;
   background-color: $magenta;
@@ -19,6 +30,7 @@ main {
 .content {
   margin: 4rem 0 0 0;
 }
+
 .search-background {
   z-index: -1;
   grid-row-start: m-start;
