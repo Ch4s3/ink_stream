@@ -1,0 +1,133 @@
+nav {
+  background-color: $white;
+  color: $primary-color;
+  height: 7rem;
+  width: 100vw;
+}
+.nav-container{
+  height: 7rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+nav .logo {
+  margin-top: 2rem;
+  margin-left: 5rem;
+  height: 4rem;
+}
+nav p {
+  padding-left: 2rem;
+  line-height: 3rem;
+  font-size: 3rem;
+  font-weight: 400;
+  display: inline;
+  position: relative;
+  bottom: 1rem;
+}
+nav .nav-links { 
+  float: right;
+  ul { 
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    display: inline-block;
+    vertical-align:top;
+  }
+  li {
+    list-style: none;
+    display: inline-block; 
+    height: 7rem;
+    background-color: $white;
+    padding: 0 1rem 0 1rem;
+    a { 
+      font-weight: 400;
+      line-height: 7rem;
+      color: $primary-color; 
+    } 
+  }
+  li:hover {
+    background-color: $primary-color; 
+    a { color: $white; }
+  }
+}
+
+nav .nav-toggle {
+  visibility: hidden;
+}
+
+nav .mobile-menu {
+  visibility: hidden;
+}
+
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2){
+  nav {
+    height: 10rem;
+  }
+  nav .logo {
+    height: 7rem;
+  }
+  nav p {
+    font-size: 6rem;
+    line-height: 7rem;
+  }
+  .nav-container{
+    height: 10rem;
+  }
+  nav .nav-links {
+    visibility: hidden;
+  }
+  nav button.nav-toggle {
+    display: inline-block;
+    visibility: visible;
+    position: relative;
+    width: 8rem;
+    height: 100%;
+    padding: 0;
+    margin-bottom: 0;
+    margin-left: 2rem;
+    bottom: 1rem;
+  }
+
+  nav .nav-toggle svg {
+    height: 6rem;
+  }
+
+  nav .mobile-menu {
+    background-color: $primary-color;
+    z-index: 9999;
+    position: fixed;
+    height: 100vh;
+    width: 30em;
+    top: 0;
+    left: -30em;
+  }
+
+  nav ul.side-nav-list {
+    grid-area: n;
+    width: 100%;
+    padding-top: 7rem;
+  }
+  nav li.side-nav-link {
+    height: 10rem;
+    a {
+      line-height: 10rem;
+      font-size: 4rem;
+      color: $white;
+    }
+  }
+
+  nav .mobile-menu.active {
+    visibility: visible;
+    transform: translateX(30em);
+    -webkit-transition: transform 0.3s ease-in;
+    transition: transform 0.3s ease-in;
+  }
+  nav .mobile-menu.slide-back {
+    visibility: visible;
+    transform: translateX(-30em);
+    -webkit-transition: transform 0.3s ease-in;
+    transition: transform 0.3s ease-in;
+  }
+}

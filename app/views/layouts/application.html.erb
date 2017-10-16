@@ -4,10 +4,11 @@
     <title>InkStream</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', async: true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body>
+    <div class="screen"></div>
     <%= render "layouts/nav"%>
     <main role="main">
       <div class="wrapper">
