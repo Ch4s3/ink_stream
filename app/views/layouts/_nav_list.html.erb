@@ -1,0 +1,14 @@
+<ul class='side-nav-list'>
+  <%- if user_signed_in? %>
+    <li class='side-nav-link'>
+      <%= link_to('new article', new_article_path, 'arial-label': 'new article')%>
+    </li>
+  <% end %>
+  <li class='side-nav-link'>
+    <%- if user_signed_in? %>
+      <%= link_to('sign out', destroy_user_session_path, method: :delete, 'arial-label': 'sign out')%>
+    <%- else %>
+      <%= link_to('sign in', new_user_session_path, 'arial-label': 'sign in')%>
+    <% end %>
+  </li>
+</ul>
