@@ -11,14 +11,14 @@ main {
   padding: 0 0 2rem 0;
 }
 
-.overlay{
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   z-index: 10;
-  transition: background 0.35s ease;
+  transition: background 0.3s ease;
   background-color: rgba(0,0,0,0.5); /*dim the background*/
 }
 
@@ -95,4 +95,26 @@ main {
 
 button.button.dismiss-flash:hover {
   color: $white;
+}
+
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2){
+  .search-background {
+    height: 50rem;
+  }
+  fieldset label, legend {
+    font-size: 2rem;
+  }
+  div.wrapper input[type='text'], select {
+    border: 0.2rem solid $white;
+    height: 4.2rem !important;
+    padding: .6rem 1.0rem;
+  }
+  .button.button-outline, button, input[type='submit'] {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    height: 6.6rem;
+  }
 }

@@ -32,28 +32,21 @@ nav .nav-links {
     display: inline-block;
     vertical-align:top;
   }
-  li { 
+  li {
     list-style: none;
-    padding: 0; 
     display: inline-block; 
-  }
-  li.log-in-log-out {
-    background-color: $primary-color;
     height: 7rem;
-    a { 
-      line-height: 7rem;
-      color: $white; 
-    }
-    
-  }
-  li.log-in-log-out:hover { 
     background-color: $white;
-    a { color: $primary-color; } 
+    padding: 0 1rem 0 1rem;
+    a { 
+      font-weight: 400;
+      line-height: 7rem;
+      color: $primary-color; 
+    } 
   }
-  li a {
-    color: $primary-color;
-    line-height: 3rem;
-    margin:0 1rem;
+  li:hover {
+    background-color: $primary-color; 
+    a { color: $white; }
   }
 }
 
@@ -69,24 +62,36 @@ nav .mobile-menu {
 and (min-device-width: 320px) 
 and (max-device-width: 667px) 
 and (-webkit-min-device-pixel-ratio: 2){
+  nav {
+    height: 10rem;
+  }
   nav .logo {
-    height: 5rem;
+    height: 7rem;
   }
   nav p {
-    font-size: 4rem;
-    line-height: 5rem;
+    font-size: 6rem;
+    line-height: 7rem;
   }
   .nav-container{
-    height: 9rem;
+    height: 10rem;
   }
   nav .nav-links {
     visibility: hidden;
   }
-  nav .nav-toggle {
-    display: inline;
+  nav button.nav-toggle {
+    display: inline-block;
     visibility: visible;
     position: relative;
-    bottom: 1.5rem;
+    width: 8rem;
+    height: 100%;
+    padding: 0;
+    margin-bottom: 0;
+    margin-left: 2rem;
+    bottom: 1rem;
+  }
+
+  nav .nav-toggle svg {
+    height: 6rem;
   }
 
   nav .mobile-menu {
@@ -116,13 +121,13 @@ and (-webkit-min-device-pixel-ratio: 2){
   nav .mobile-menu.active {
     visibility: visible;
     transform: translateX(30em);
-    -webkit-transition: transform 0.35s ease-in;
-    transition: transform 0.35s ease-in;
+    -webkit-transition: transform 0.3s ease-in;
+    transition: transform 0.3s ease-in;
   }
   nav .mobile-menu.slide-back {
     visibility: visible;
     transform: translateX(-30em);
-    -webkit-transition: transform 0.35s ease-in;
-    transition: transform 0.35s ease-in;
+    -webkit-transition: transform 0.3s ease-in;
+    transition: transform 0.3s ease-in;
   }
 }
