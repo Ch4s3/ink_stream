@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
                             publication: publication)
     if @article.save
       ArticleWorker.perform_async(@article.link, @article.id)
-      message = 'The article has been created and an excerpt is being generated'
+      message = 'The article has been created and an text is being parsed'
       flash_and_redirect(message, :success)
     else
       flash_and_redirect(@article.errors, :error, :back)

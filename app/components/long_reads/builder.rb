@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module NyTimes
-  # A builder for articles that come from the New York Times
+module LongReads
+  # A builder for articles that come from Long Reads
   class Builder
     attr_reader :article
     def initialize(response_body, article_path, article_id = nil)
@@ -18,7 +18,7 @@ module NyTimes
     def build_article_hash
       {
         title: article_title,
-        publication: Publication.new_york_times.first, # TODO: figure out why this can return > 1
+        publication: Publication.long_reads.first,
         date: article_published_on,
         full_text: article_full_text,
         link: "https://www.nytimes.com#{@article_path}"
@@ -28,16 +28,16 @@ module NyTimes
     private
 
     def article_title
-      @xml.css('h1.headline').text.split('SHARE')[0]
+      @xml.css('h1.entry-title').children[1].text
     end
 
     def article_full_text
-      @xml.css('.article-body').text
+      @xml.css('.entry-content').text
     end
 
     def article_published_on
-      # TODO: fix this parsing
-      DateTime.parse(@xml.css('.dateline').text)
+      date = @xml.css('.author-date')[0].children[6].text
+      DateTime.parse(date)
     end
   end
 end
