@@ -28,7 +28,7 @@ User.create(
       title: title,
       link: "#{site_url}/#{CGI::escape(title)}",
       date:  date,
-      excerpt: Faker::Lorem.paragraph(36),
+      full_text: Faker::Lorem.paragraph(36),
       publication: pub
     )
   end

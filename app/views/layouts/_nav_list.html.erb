@@ -3,6 +3,11 @@
     <li class='side-nav-link'>
       <%= link_to('new article', new_article_path, 'arial-label': 'new article')%>
     </li>
+    <%- if current_user.admin? %>
+      <li class='side-nav-link'>
+        <%= link_to('new publication', new_publication_path, 'arial-label': 'new publication')%>
+      </li>
+    <% end %>
   <% end %>
   <li class='side-nav-link'>
     <%- if user_signed_in? %>

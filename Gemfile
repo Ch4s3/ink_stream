@@ -69,4 +69,5 @@ group :test do
   gem 'rspec-benchmark'
   gem 'rspec-rails', '~> 3.6'
   gem 'rspec-sidekiq'
+  gem 'webmock'
 end

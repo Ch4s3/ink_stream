@@ -5,6 +5,21 @@ class Article < ApplicationRecord
   belongs_to :publication, optional: true
   scope :fuzzy_title, ->(title) { where('title LIKE ?', "%#{title}%") }
 
+  # Upserts an article with new data from a hash,
+  # creating it if the id desn not exist or updating
+  # the article if the id exists
+  #
+  # @param article_hash [Hash]
+  # @param article_id [Integer|nil]
+  # @return [Boolean|nil]
+  def self.upsert(article_hash, article_id)
+    if article_id
+      update_with_hash_by_id(article_hash, article_id)
+    else
+      create(article_hash)
+    end
+  end
+
   # Updates an existing article with new data from a hash,
   # given an existing id
   #

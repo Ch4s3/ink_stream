@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="http://nautilus-vertical.s3.amazonaws.com/vert/mitp/favicon.ico">
+<meta charset="UTF-8">
+<meta http-equiv="Expires" content="30">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="apple-mobile-web-app-title" content="MITP on Nautilus">
+<meta name="application-name" content="MITP on Nautilus">
+<meta name="description" content="During World War II, a radar operator tracks an airplane over Hamburg, guiding searchlights and anti-aircraft guns in relation to a phosphor dot whose position is updated with each sweep...">
+<meta name="keywords" content="">
+<meta name="msapplication-TileColor" content="#3365D1">
+<meta name="theme-color" content="#3365D1">
+<link rel="canonical" href="http://mitp.nautil.us/feature/257/how-to-obfuscate">
+<meta name="citation_title" content="How to Obfuscate">
+<meta name="citation_online_date" content="2017-09-25">
+<meta name="citation_author" content="Finn Brunton and Helen Nissenbaum">
+<meta name="keywords" content="">
+<meta name="msapplication-TileColor" content="#3365D1">
+<meta name="theme-color" content="#3365D1">
+<meta name="twitter:creator" content="@NautilusMag">
+<meta name="twitter:description" content="During World War II, a radar operator tracks an airplane over Hamburg, guiding searchlights and anti-aircraft guns in relation to a phosphor dot whose position is updated with each sweep...">
+<meta name="twitter:image" content="http://nautilus-vertical.s3.amazonaws.com/mitp_0x0_476x316_a-257.png">
+<meta name="twitter:site" content="@NautilusMag">
+<meta name="twitter:title" content="How to Obfuscate - MITP on Nautilus">
+<meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, width=device-width">
+<meta property="og:description" content="During World War II, a radar operator tracks an airplane over Hamburg, guiding searchlights and anti-aircraft guns in relation to a phosphor dot whose position is updated with each sweep...">
+<meta property="og:image" content="http://nautilus-vertical.s3.amazonaws.com/mitp_0x0_476x316_a-257.png">
+<meta property="og:site_name" content="MITP on Nautilus">
+<meta property="og:title" content="How to Obfuscate - MITP on Nautilus">
+<meta property="og:url" content="http://mitp.nautil.us/feature/257/how-to-obfuscate">
+<meta property="fb:admins" content="520129772">
+<meta property="og:type" content="article">
+<meta property="twitter:card" content="summary_large_image">
+    <title>MITP on Nautilus: How to Obfuscate</title>
+    <script src="http://mitp.nautil.us/js/jquery-3.1.1.min.js"></script>
+    <script src="http://mitp.nautil.us/js/jquery.transit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+    <script type="text/javascript">
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        (function() {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') +
+                    '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        })();
+    </script>
+
+
+    <link rel="stylesheet" type="text/css" href="/build/css/site-3198d50dc3.css">
+    
+<style>
+    span.dropcap{color:#390025;}
+    .backcolor{background-color:#390025;}
+</style>
+    <style>
+        .vert_lnk:hover{color:#3365D1!important;}
+        .vert_blnk:hover{background-color:#3365D1!important;}
+        .vert_txt{color:#3365D1!important;}
+        .vert_txt.general_datetype a u{border-bottom-color:#3365D1!important;}
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-37494472-1', 'auto');
+        ga('require', 'displayfeatures');
+        ga('send', {
+            hitType: 'pageview',
+            page: 'mitp'+location.pathname
+        });
+
+    </script>
+    <script>window.vertical = 'mitp'; </script>
+</head>
+
+<body class="mitp feature">
+<!--------------->
+<header class="Main hide">
+    <a href="http://mitp.nautil.us/">
+        <div class="logo">
+       <div id="logo_cap">
+            <img alt="MITP" src="http://nautilus-vertical.s3.amazonaws.com/vert/mitp/logo.svg">
+
+       </div>
+        </div></a>
+    <div class="menu_action">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+</header>
+
+<nav class="Menu">
+    <ul>
+        
+                                                            <li class="choice"><a class="vert_lnk vert_txt" href="http://mitp.nautil.us/feature"> Features</a></li>
+                                                                <li class="choice"><a class="vert_lnk " href="http://mitp.nautil.us/article"> Articles</a></li>
+                                                                       <li class="choice spacer">        <li class="choice"><a class="vert_lnk" href="http://shop.nautil.us/nautilus-print-edition/">Subscribe</a></li>
+        <li class="choice naut_conn"><a class="vert_lnk" href="http://nautil.us">Nautilus: Science Connected</a></li>
+    </ul>
+</nav>
+
+
+    <main class="" id="main_257" data-fpath="mitp.nautil.us/feature/257/how-to-obfuscate" data-title="How to Obfuscate" data-cid="257">
+
+
+    <section class="LongformA">
+
+        <div class="LongformA_tile">
+            <div class="flex">
+                <div class="flex_child LongformA_image" style="background-image:url(http://nautilus-vertical.s3.amazonaws.com/mitp-a-257.png)">
+
+                </div>
+                <div class="flex_child LongformA_text flex flex_column backcolor" style="background-color:#390025;color:#ffffff;">
+                        <div class="general_datetype">September 2017</div>
+                                            <div class="LongformA_textbody">
+                        <h2>How to Obfuscate</h2>
+                        <h3>What misinformation on Twitter and radar have in common.</h3>
+                                                    <h4>By Finn Brunton and Helen Nissenbaum</h4>
+                                            </div>
+
+                </div>
+            </div>
+        </div>
+
+        <section class="social">
+    <a class="vert_lnk" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Bsite_name%5D=MITP+on+Nautilus&amp;p%5Btype%5D=website&amp;p%5Burl%5D=http%3A%2F%2Fmitp.nautil.us%2Ffeature%2F257%2Fhow-to-obfuscate&amp;p%5Btitle%5D=How+to+Obfuscate&amp;p%5Bsummary%5D=During+World+War+II%2C+a+radar+operator+tracks+an+airplane+over+Hamburg%2C+guiding+searchlights+and+anti-aircraft+guns+in+relation+to+a+phosphor+dot+whose+position+is+updated+with+each+sweep...&amp;p%5Bimages%5D%5B0%5D=http%3A%2F%2Fmitp.nautil.us%2Fstorage%2Fmitp_0x0_476x316_a-257.png" target="_BLANK"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+    <a class="vert_lnk" href="https://twitter.com/share?url=http%3A%2F%2Fmitp.nautil.us%2Ffeature%2F257%2Fhow-to-obfuscate&amp;text=How+to+Obfuscate&amp;via=NautilusMag" target="_BLANK"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+    <a class="vert_lnk" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fmitp.nautil.us%2Ffeature%2F257%2Fhow-to-obfuscate&amp;title=How+to+Obfuscate&amp;summary=During+World+War+II%2C+a+radar+operator+tracks+an+airplane+over+Hamburg%2C+guiding+searchlights+and+anti-aircraft+guns+in+relation+to+a+phosphor+dot+whose+position+is+updated+with+each+sweep...&amp;source=MITP+on+Nautilus" target="_BLANK"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+    <a class="vert_lnk" href="mailto:?subject=MITP%20on%20Nautilus:%20How%20to%20Obfuscate&amp;body=I%20saw%20this%20article%20at%20MITP%20on%20Nautilus%20and%20wanted%20to%20share%20it%20with%20you.%20%0D%0A%0D%0AHow%20to%20Obfuscate%0D%0ADuring%20World%20War%20II,%20a%20radar%20operator%20tracks%20an%20airplane%20over%20Hamburg,%20guiding%20searchlights%20and%20anti-aircraft%20guns%20in%20relation%20to%20a%20phosphor%20dot%20whose%20position%20is%20updated%20with%20each%20sweep...%0D%0A%0D%0Ahttp://mitp.nautil.us/feature/257/how-to-obfuscate" target="_BLANK"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+</section>
+
+
+    </section>
+
+
+
+
+    <article>
+        <p><span style="color:#390025;" class="dropcap">D</span>uring World War II, a radar operator tracks an airplane over Hamburg, guiding searchlights and anti-aircraft guns in relation to a phosphor dot whose position is updated with each sweep of the antenna. Abruptly, dots that seem to represent airplanes begin to multiply, quickly swamping the display. The actual plane is in there somewhere, impossible to locate owing to the presence of “false echoes.”<sup>1</sup></p>
+
+<p>The plane has released chaff—strips of black paper backed with aluminum foil and cut to half the target radar’s wavelength. Thrown out by the pound and then floating down through the air, they fill the radar screen with signals. The chaff has exactly met the conditions of data the radar is configured to look for, and has given it more “planes,” scattered all across the sky, than it can handle.</p>
+<figure class="breaker_center"><img src="https://s3.amazonaws.com/nautilus-vertical/mitp_c06608523e7e0d508729688d23841b20.png" alt="Brunton_BR-1"><figcaption></figcaption></figure>
+<p>This may well be the purest, simplest example of the obfuscation approach. Because discovery of an actual airplane was inevitable (there wasn’t, at the time, a way to make a plane invisible to radar), chaff taxed the time and bandwidth constraints of the discovery system by creating too many potential targets. That the chaff worked only briefly as it fluttered to the ground and was not a permanent solution wasn’t relevant under the circumstances. It only had to work well enough and long enough for the plane to get past the range of the radar.<br></p>
+<p>Many forms of obfuscation work best as time-buying “throw-away” moves. They can get you only a few minutes, but sometimes a few minutes is all the time you need.</p>
+<p>The example of chaff also helps us to distinguish, at the most basic level, between approaches to obfuscation. Chaff relies on producing echoes—imitations of the real thing—that exploit the limited scope of the observer. (Fred Cohen terms this the “decoy strategy.”<sup>2</sup>) As we will see, some forms of obfuscation <em>generate genuine but misleading signals</em>—much as you would protect the contents of one vehicle by sending it out accompanied by several other identical vehicles, or defend a particular plane by filling the sky with other planes—whereas other forms <em>shuffle genuine signals</em>, mixing data in an effort to make the extraction of patterns more difficult. Because those who scatter chaff have exact knowledge of their adversary, chaff doesn’t have to do either of these things.</p>
+<p><strong>TrackMeNot: blending genuine and artificial search queries</strong></p>
+<p>TrackMeNot, developed in 2006 by Daniel Howe, Helen Nissenbaum, and Vincent Toubiana, exemplifies a software strategy for concealing activity with imitative signals.<sup>3</sup> The purpose of TrackMeNot is to foil the profiling of users through their searches. It was designed in response to the U.S. Department of Justice’s request for Google’s search logs<sup>4</sup> and in response to the surprising discovery by a reporter from <em>The New York Times</em> that some identities and profiles could be inferred even from anonymized search logs published by AOL Inc.<sup>5</sup></p>
+<blockquote>The activities of individuals are masked by those of many ghosts.</blockquote>
+<p>Our search queries end up acting as lists of locations, names, interests, and problems. Whether or not our full IP addresses are included, our identities can be inferred from these lists, and patterns in our interests can be discerned. Responding to calls for accountability, search companies have offered ways to address people’s concerns about the collection and storage of search queries, though they continue to collect and analyze logs of such queries.<sup>6</sup> Preventing any stream of queries from being inappropriately revealing of a particular person’s interests and activities remains a challenge.<sup>7</sup></p>
+<figure class="breaker_center"><img src="https://s3.amazonaws.com/nautilus-vertical/mitp_aa406c5476cc687b4f63aace5459be6f.png" alt="Brunton_BR-2"><figcaption></figcaption></figure>
+<p>The solution TrackMeNot offers is not to hide users’ queries from search engines (an impractical method, in view of the need for query satisfaction), but to obfuscate by automatically generating queries from a “seed list” of terms. Initially culled from RSS feeds, these terms evolve so that different users develop different seed lists. The precision of the imitation is continually refined by repopulating the seed list with new terms generated from returns to search queries. TrackMeNot submits queries in a manner that tries to mimic real users’ search behaviors. For example, a user who has searched for “good wifi-cafe Chelsea” may also have searched for “Savannah kennels,” “freshly pressed juice Miami,” “Asian property firm,” “exercise delays dementia,” and “telescoping halogen light.” The activities of individuals are masked by those of many ghosts, making the pattern harder to discern so that it becomes much more difficult to say of any query that it was a product of human intention rather than an automatic output of TrackMeNot. In this way, TrackMeNot extends the role of obfuscation, in some situations, to include plausible deniability.<br></p>
+<p><strong>Twitter bots: filling a channel with noise</strong></p>
+<p>During protests over problems that had arisen in the 2011 Russian parliamentary elections, much of the conversation about ballot-box stuffing and other irregularities initially took place on LiveJournal, a blogging platform that had originated in the United States but attained its greatest popularity in Russia—more than half of its user base is Russian.<sup>8</sup> Though LiveJournal is quite popular, its user base is very small relative to those of Facebook’s and Google’s various social systems; it has fewer than 2 million active accounts. Thus, LiveJournal is comparatively easy for attackers to shut down by means of distributed denial of service (DDoS) attack—that is, by using computers scattered around the world to issue requests for the site in such volume that the servers making the site available are overwhelmed and legitimate users can’t access it. Such an attack on LiveJournal, in conjunction with the arrests of activist bloggers at a protest in Moscow, was a straightforward approach to censorship.<sup>9</sup> When and why, then, did obfuscation become necessary?</p>
+<p>The conversation about the Russian protest migrated to Twitter, and the powers interested in disrupting it then faced a new challenge. Twitter has an enormous user base, with infrastructure and security expertise to match. It could not be taken down as easily as LiveJournal. Based in the United States, Twitter was in a much better position to resist political manipulation than LiveJournal’s parent company. (Although LiveJournal service is provided by a company set up in the U.S. for that purpose, the company that owns it, SUP Media, is based in Moscow.<sup>10</sup>) To block Twitter outright would require direct government intervention. The LiveJournal attack was done independently, by nationalist hackers who may or may not have had the approval and assistance of the Putin/Medvedev administration.<sup>11</sup> Parties interested in halting the political conversation on Twitter therefore faced a challenge that will become familiar as we explore obfuscation’s uses: Time was tight, and traditional mechanisms for action weren’t available. A direct technical approach—either blocking Twitter within a country or launching a worldwide denial-of-service attack—wasn’t possible, and political and legal angles of attack couldn’t be used. Rather than stop a Twitter conversation, then, attackers can overload it with noise.</p>
+<figure class="breaker_center"><img src="https://s3.amazonaws.com/nautilus-vertical/mitp_c66da1d683141840f0b8ac71d396d692.png" alt="Brunton_BR-3"><figcaption><span class="caption"><strong>TWEETSTORM</strong>To combat the organization of parliamentary election protests like this one, Russian authorities flooded protest-relevant Twitter hashtags with meaningless tweets.</span><br><span class="credit">YURI KADOBNO / Getty Images</span></figcaption></figure>
+<p>During the Russian protests, the obfuscation took the form of thousands of Twitter accounts suddenly piping up and users posting tweets using the same hashtags used by the protesters.<sup>12</sup> Hashtags are a mechanism for grouping tweets together; for example, if I add #obfuscation to a tweet, the symbol # turns the word into an active link—clicking it will bring up all other tweets tagged with #obfuscation. Hashtags are useful for organizing the flood of tweets into coherent conversations on specific topics, and #триумфальная (referring to Triumfalnaya, the location of a protest) became one of several tags people could use to vent their anger, express their opinions, and organize further actions. (Hashtags also play a role in how Twitter determines “trending” and significant topics on the site, which can then draw further attention to what is being discussed under that tag—the site’s Trending Topics list often draws news coverage.<sup>13</sup>)<br></p>
+<p>If you were following #триумфальная, you would have seen tweet after tweet from Russian activists spreading links to news and making plans. But those tweets began to be interspersed with tweets about Russian greatness, or tweets that seemed to consist of noise, gibberish, or random words and phrases. Eventually those tweets dominated the stream for #триумфальная, and those for other topics related to the protests, to such a degree that tweets relevant to the topic were, essentially, lost in the noise, unable to get any attention or to start a coherent exchange with other users. That flood of new tweets came from accounts that had been inactive for much of their existence. Although they had posted very little from the time of their creation until the time of the protests, now each of them was posting dozens of times an hour. Some of the accounts’ purported users had mellifluous names, such as imelixyvyq, wyqufahij, and hihexiq; others had more conventional-seeming names, all built on a firstname_lastname model—for example, latifah_xander.</p>
+<p>Obviously, these Twitter accounts were “Twitter bots”—programs purporting to be people and generating automatic, targeted messages. Many of the accounts had been created around the same time. In numbers and in frequency, such messages can easily dominate a discussion, effectively ruining the platform for a specific audience through overuse—that is, obfuscating through the production of false, meaningless signals.</p>
+<p><strong>French decoy radar emplacements: defeating radar detectors</strong></p>
+<p>Obfuscation plays a part in the French government’s strategy against radar detectors.<sup>14</sup> These fairly common appliances warn drivers when police are using speed-detecting radar nearby. Some radar detectors can indicate the position of a radar gun relative to a user’s vehicle, and thus are even more effective in helping drivers to avoid speeding tickets.</p>
+<p>In theory, tickets are a disincentive to excessively fast and dangerous driving; in practice, they serve as a revenue source for local police departments and governments. For both reasons, police are highly motivated to defeat radar detectors.</p>
+<figure class="breaker_center"><img src="https://s3.amazonaws.com/nautilus-vertical/mitp_e581cc9020f4d80a3698487eafd417d5.png" alt="Brunton_BR-5"><figcaption></figcaption></figure>
+<p>The option of regulating or even banning radar detectors is unrealistic in view of the fact that 6 million French drivers are estimated to own them. Turning that many ordinary citizens into criminals seems impolitic. Without the power to stop surveillance of radar guns, the French government has taken to obfuscation to render such surveillance less useful in high-traffic zones by deploying arrays of devices that trigger radar detectors’ warning signals without actually measuring speed. These devices mirror the chaff strategy in that the warning chirps multiply and multiply again. One of them may, indeed, indicate actual speed-detecting radar, but which one? The meaningful signal is drowned in a mass of other plausible signals. Either drivers risk getting speeding tickets or they slow down in response to the deluge of radar pings. And the civic goal is accomplished. No matter how one feels about traffic cops or speeding drivers, the case holds interest as a way obfuscation serves to promote an end not by destroying one’s adversaries’ devices outright but by rendering them functionally irrelevant.<br></p>
+<p><strong>AdNauseam: clicking all the ads</strong></p>
+<p>In a strategy resembling that of the French radar-gun decoys, AdNauseam, a browser plug-in, resists online surveillance for purposes of behavioral advertising by clicking all the banner ads on all the Web pages visited by its users. In conjunction with Ad Block Plus, AdNauseam functions in the background, quietly clicking all blocked ads while recording, for the user’s interest, details about ads that have been served and blocked.</p>
+<blockquote>What more telling evidence is there of interest than clicks on particular ads?</blockquote>
+<p>The idea for AdNauseam emerged out of a sense of helplessness: It isn’t possible to stop ubiquitous tracking by ad networks, or to comprehend the intricate institutional and technical complexities constituting its socio-technical backend. These include Web cookies and beacons, browser fingerprinting (which uses combinations and configurations of the visitor’s technology to identify their activities), ad networks, and analytics companies. Efforts to find some middle ground through a Do Not Track technical standard have been frustrated by powerful actors in the political economy of targeted advertising. In this climate of no compromise, AdNauseam was born. Its design was inspired by a slender insight into the prevailing business model, which charges prospective advertisers a premium for delivering viewers with proven interest in their products. What more telling evidence is there of interest than clicks on particular ads? Clicks also sometimes constitute the basis of payment to an ad network and to the ad-hosting website. Clicks on ads, in combination with other data streams, build up the profiles of tracked users. Like the French radar decoy systems, AdNauseam isn’t aiming to destroy the ability to track clicks; instead it functions by diminishing the value of those clicks by obfuscating the real clicks with clicks that it generates automatically.</p>
+<p><strong>Personal disinformation: strategies for individuals</strong></p>
+<p>Disappearance specialists have much to teach would-be obfuscators. Many of these specialists are private detectives or “skip tracers”—professionals in the business of finding fugitives and debtors—who reverse engineer their own process to help their clients stay lost. Obviously many of the techniques and methods they employ have nothing to do with obfuscation, but rather are merely evasive or concealing—for instance, creating a corporation that can lease your new apartment and pay your bills so that your name will not be connected with those common and publicly searchable activities. However, in response to the proliferation of social networking and online presence, disappearance specialists advocate a strategy of <em>disinformation</em>, a variety of obfuscation. “Bogus individuals,” to quote the disappearance consultant Frank Ahearn, can be produced in number and detail that will “bury” pre-existing personal information that might crop up in a list of Web search results.<sup>15</sup> This entails creating a few dozen fictitious people with the same name and the same basic characteristics, some of them with personal websites, some with accounts on social networks, and all of them intermittently active. For clients fleeing stalkers or abusive spouses, Ahearn recommends simultaneously producing numerous false leads that an investigator would be likely to follow—for example, a credit check for a lease on an apartment in one city (a lease that was never actually signed) and applications for utilities, employment addresses, and phone numbers scattered across the country or the world, and a checking account, holding a fixed sum, with a debit card given to someone traveling to pay for expenses incurred in remote locations. Strategies suggested by disappearance specialists are based on known details about the adversary: The goal is not to make someone “vanish completely,” but to put one far enough out of sight for practical purposes and thus to use up the seeker’s budget and resources.</p>
+<figure class="breaker_center"><img src="https://s3.amazonaws.com/nautilus-vertical/mitp_36311720f8a96f6658d819ec9b4d1623.png" alt="Brunton_BR-7"><figcaption></figcaption></figure>
+<p><strong>Apple’s “cloning service” patent: polluting electronic profiling</strong><br></p>
+<p>In 2012, as part of a larger portfolio purchase from Novell, Apple acquired U.S. Patent 8,205,265, “Techniques to Pollute Electronic Profiling.” An approach to managing data surveillance without sacrificing services, it parallels several systems of technological obfuscation we have described already. This “cloning service” would automate and augment the process of producing misleading personal information, targeting online data collectors rather than private investigators.</p>
+<blockquote>It is in your interest to expand this population of possible selves, leading lives that could be yours.</blockquote>
+<p>A “cloning service” observes an individual’s activities and assembles a plausible picture of his or her rhythms and interests. At the user’s request, it will spin off a cloned identity that can use the identifiers provided to authenticate (to social networks, if not to more demanding observers) that represents a real person. These identifiers might include small amounts of actual confidential data (a few details of a life, such as hair color or marital status) mixed in with a considerable amount of deliberately inaccurate information. Starting from its initial data set, the cloned identity acquires an email address from which it will send and receive messages, a phone number (there are many online calling services that make phone numbers available for a small fee), and voicemail service. It may have an independent source of funds (perhaps a gift card or a debit card connected with a fixed account that gets refilled from time to time) that enables it to make small transactions. It may even have a mailing address or an Amazon locker—two more signals that suggest personhood. To these signals may be added some interests formally specified by the user and fleshed out with existing data made accessible by the scraping of social-network sites and by similar means. If a user setting up a clone were to select from drop-down menus that the clone is American and is interested in photography and camping, the system would figure out that the clone should be interested in the work of Ansel Adams. It can conduct searches (in the manner of TrackMeNot), follow links, browse pages, and even make purchases and establish accounts with services (e.g., subscribing to a mailing list devoted to deals on wilderness excursions, or following <em>National Geographic</em>’s Twitter account). These interests may draw on the user’s actual interests, as inferred from things such as the user’s browsing history, but may begin to diverge from those interests in a gradual, incremental way. (One could also salt the profile of one’s clone with demographically appropriate activities, automatically chosen, building on the basics of one’s actual data by selecting interests and behaviors so typical that they even out the telling idiosyncrasies of selfhood.)</p>
+<p>After performing some straightforward analysis, a clone can also take on a person’s rhythms and habits. If you are someone who is generally offline on weekends, evenings, and holidays, your clone will do likewise. It won’t run continuously, and you can call it off if you are about to catch a flight, so an adversary will not be able to infer easily which activities are not yours. The clones will resume when you do. (For an explanation of why we now are talking about <em>multiple</em> clones, see below.) Of course, you can also select classes of activities in which your clones will not engage, lest the actors feigning to be you pirate some media content, begin to search for instructions on how to manufacture bombs, or look at pornography, unless they must do so to maintain plausibility—making all one’s clones clean-living, serious-minded network users interested only in history, charitable giving, and recipes might raise suspicions. (The reason we have switched from talking about a singular clone to speaking about multiple clones is that once one clone is up and running there will be many others. Indeed, imagine a Borgesian joke in which sufficiently sophisticated clones, having learned from your history, demography, and habits, create clones of their own—copies of copies.) It is in your interest to expand this population of possible selves, leading lives that could be yours, day after day. This fulfills the fundamental goal outlined by the patent: Your clones don’t dodge or refuse data gathering, but in complying they pollute the data collected and reduce the value of profiles created from those data.</p>
+<p><strong>“Bayesian flooding” and “unselling” the value of online identity</strong></p>
+<p>In 2012, Kevin Ludlow, a developer and an entrepreneur, addressed a familiar obfuscation problem: What is the best way to hide data from Facebook?<sup>16</sup> The short answer is that there is no good way to <em>remove</em> data, and wholesale withdrawal from social networks isn’t a realistic possibility for many users. Ludlow’s answer is by now a familiar one.</p>
+<p>“Rather than trying to hide information from Facebook,” Ludlow wrote, “it may be possible simply to overwhelm it with too much information.” Ludlow’s experiment (which he called “Bayesian flooding,” after a form of statistical analysis) entailed entering hundreds of life events into his Facebook Timeline over the course of months—events that added up to a life worthy of a three-volume novel. He got married and divorced, fought cancer (twice), broke numerous bones, fathered children, lived all over the world, explored a dozen religions, and fought for a slew of foreign militaries. Ludlow didn’t expect anyone to fall for these stories; rather, he aimed to produce a less targeted personal experience of Facebook through the inaccurate guesses to which the advertising now responds, and as an act of protest against the manipulation and “coercive psychological tricks” embedded both in the advertising itself and in the site mechanisms that provoke or sway users to enter more information than they may intend to enter. In fact, the sheer implausibility of Ludlow’s Timeline life as a globe-trotting, caddish mystic-mercenary with incredibly bad luck acts as a kind of filter: No human reader, and certainly no friend or acquaintance of Ludlow’s, would assume that all of it was true, but the analysis that drives the advertising has no way of making such distinctions.</p>
+<p>Ludlow hypothesizes that, if his approach were to be adopted more widely, it wouldn’t be difficult to identify wild geographic, professional, or demographic outliers—people whose Timelines were much too crowded with incidents—and then wash their results out of a larger analysis. The particular understanding of victory that Ludlow envisions is a limited one. His Bayesian flooding isn’t meant to counteract and corrupt the vast scope of data collection and analysis; rather, its purpose is to keep data about oneself both within the system and inaccessible. Max Cho describes a less extreme version: “The trick is to populate your Facebook with just enough lies as to destroy the value and compromise Facebook’s ability to sell you”<sup>17</sup>—that is, to make your online activity harder to commoditize, as an act of conviction and protest.</p>
+<p><strong>Manufacturing conflicting evidence: confounding investigation</strong></p>
+<p><em>The Art of Political Murder: Who Killed the Bishop?</em>—Francisco Goldman’s account of the investigation into the death of Bishop Juan José Gerardi Conedera—reveals the use of obfuscation to muddy the waters of evidence collection.<sup>18</sup> Bishop Gerardi, who played an enormously important part in defending human rights during Guatemala’s civil war of 1960–1996, was murdered in 1998.</p>
+<p>As Goldman documented the long and dangerous process of bringing at least a few of those responsible within the Guatemalan military to justice for this murder, he observed that those threatened by the investigation didn’t merely plant evidence to conceal their role. Framing someone else would be an obvious tactic, and the planted evidence would be assumed to be false. Rather, they produced <em>too much</em> conflicting evidence, too many witnesses and testimonials, too many possible stories. The goal was not to construct an airtight lie, but rather to multiply the possible hypotheses so prolifically that observers would despair of ever arriving at the truth. The circumstances of the bishop’s murder produced what Goldman terms an “endlessly exploitable situation,” full of leads that led nowhere and mountains of seized evidence, each factual element calling the others into question. “So much could be made and so much would be made to <em>seem to connect</em>,” Goldman writes, his italics emphasizing the power of the ambiguity.</p>
+<p>The thugs in the Guatemalan military and intelligence services had plenty of ways to manage the situation: access to internal political power, to money, and, of course, to violence and the threat of violence. In view of how opaque the situation remains, we do not want to speculate about exact decisions, but the fundamental goal seems reasonably clear. The most immediately significant adversaries—investigators, judges, journalists—could be killed, menaced, bought, or otherwise influenced. The obfuscating evidence and other materials were addressed to the larger community of observers, a proliferation of false leads throwing enough time-wasting doubt over every aspect of the investigation that it could call the ongoing work, and any conclusions, into question.</p>
+<p><br></p>
+<p></p>
+<ul class="bylines_authors">
+<li>
+<span class="author">Finn Brunton</span> is an assistant professor of media, culture, and communication at New York University and the author of <span class="book">Spam: A Shadow History of the Internet.</span>
+</li>
+<li>
+<span class="author">Helen Nissenbaum</span> is a professor of media, culture, and communication and computer science at New York University. She is also the author of <span class="book">Privacy in Context</span> and one of the developers of the TrackMeNot software.</li>
+</ul>
+<br>
+<p><em></em></p>
+<p><br></p>
+<p><strong>References</strong></p>
+<p>1. Finkel, M. <em>On Flexibility: Recovery from Technological and Doctrinal Surprise on the Battlefield</em> Stanford University Press, Palo Alto, CA (2011).</p>
+<p>2. Cohen, F. The use of deception techniques: Honeypots and decoys. In Bidgoli, H. (Ed.), <em>Handbook of Information Security</em> Wiley, Hoboken, NJ (2005).</p>
+<p>3. Howe, D. &amp; Nissenbaum, H. TrackMeNot: Resisting surveillance in web search. In Kerr, I., Luckock, C. &amp; Steeves, V. (Eds.) <em>Lessons From the Identity Trail: Anonymity, Privacy and Identity in a Networked Society</em> Oxford University Press, New York, NY (2009).</p>
+<p>4. <em>Gonzales v. Google, Inc.</em>, Case (Subpoena) CV 06-8006MISC JW (N.D. Cal.).</p>
+<p>5. Barbaro, M. &amp; Zeller Jr., T. A Face Is Exposed for AOL Searcher No. 4417749. <em>The New York Times</em> (2006).</p>
+<p>6. Singhal, A. Search, Plus Your World. Google official blog; googleblog.blogspot.com (2012).</p>
+<p>7. Toubiana, V. &amp; Nissenbaum, H. “An analysis of Google logs retention policies. <em>Journal of Privacy and Confidentiality</em> <strong>3</strong>, 3-26 (2011).</p>
+<p>8. Maslinsky, K., Koltcov, S., &amp; Koltslova, O. Changes in the topical structure of Russian-language LiveJournal: The impact of elections 2011. <em>Higher School of Economics Research Paper</em> No. WP BPR 14/SOC/2013 (2013). Retrieved from DOI: 10.2139/ssrn.2209802</p>
+<p>9. Shuster, S. Why Have Hackers Hit Russia’s Most Popular Blogging Service? Time.com (2011). The number of Russian accounts cited in the article appears to be the total number of accounts rather than the number of active accounts. We believe activity to be a more meaningful measure.</p>
+<p>10. Parkhomenko, Y. &amp; Tait, A. BlogTalk. <em>Index on Censorship</em> <strong>37</strong>, 174–178 (2008).</p>
+<p>11. Russia: Control From the Top Down. <em>Enemies of the Internet</em> (2014).</p>
+<p>12. Krebs, B. Twitter Bots Drown Out Anti-Kremlin Tweets. KrebsonSecurity.com (2008).</p>
+<p>13. Friedman, A. Hashtag Journalism. <em>Columbia Journalism Review</em> (2014).</p>
+<p>14. Le Gouvernement Veut Rendre les Avertisseurs de Radars Inefficaces. <em>Le Monde</em> (2011).</p>
+<p>15. Goodchild, J. How to Disappear Completely. CSOonline.com (2011).</p>
+<p>16. Ludlow, K. Bayesian Flooding and Facebook Manipulation. KevinLudlow.com (2012).</p>
+<p>17. Cho, M. Unsell Yourself—A Protest Model Against Facebook. <em>Yale Law &amp; Technology</em> yalelawtech.org (2011).</p>
+<p>18. Goldman, F. <em>The Art of Political Murder: Who Killed the Bishop?</em> Grove Press, New York, NY (2008).</p>
+<p><br></p>
+<p><em>Reprinted with permission from </em><a href="https://mitpress.mit.edu/books/obfuscation" target="_blank">Obfuscation: A User’s Guide for Privacy and Protest</a> <em>by Finn Brunton and Helen Nissenbaum, published by the MIT Press.</em></p>
+    </article>
+</main>
+    <a href="http://shop.nautil.us/">
+        <div class="lload_banner">
+            <img src="http://nautilus-vertical.s3.amazonaws.com/lload_banners/lload_banner_00.png">
+        </div>
+    </a>
+
+                        <span class="ajx_article" data-cid="227" data-frm="feature"><!-- The Paradox of the Elephant Brain -->
+                            </span>
+
+                    <span class="ajx_article" data-cid="205" data-frm="feature"><!-- Your Robot Car Should Ignore You -->
+                            </span>
+
+                    <span class="ajx_article" data-cid="170" data-frm="article"><!-- Last Words: Computational Linguistics and Deep Learning -->
+                            </span>
+
+                    <span class="ajx_article" data-cid="185" data-frm="article"><!-- Man or Machine? -->
+                            </span>
+
+                    <span class="ajx_article" data-cid="182" data-frm="feature"><!-- Common Sense, the Turing Test, and the Quest for Real AI -->
+                            </span>
+
+                    <span class="ajx_article" data-cid="162" data-frm="article"><!-- Gravity Waves and Neutrinos -->
+                            </span>
+
+                    <span class="ajx_article" data-cid="159" data-frm="feature"><!-- Gravity’s Kiss -->
+                            </span>
+
+                    <span class="ajx_article" data-cid="157" data-frm="article"><!-- Feelings: What Are They and How Does the Brain Make Them? -->
+                            </span>
+
+                    <span class="ajx_article" data-cid="152" data-frm="feature"><!-- Drawing Physics -->
+                            </span>
+
+                    <span class="ajx_article" data-cid="151" data-frm="feature"><!-- The Distracted Mind -->
+                            </span>
+
+                    <span class="ajx_article" data-cid="148" data-frm="feature"><!-- The Outer Limits of Reason -->
+                                    <div class="ajwait"><img class="ajwait" src="/css/waita.gif"></div>
+                            </span>
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="Main">
+    <div class="Main_footer_wrap">
+    <div>
+        <h2>Nautilus: Science Connected</h2>
+
+
+
+        <h3>The MIT Press channel is published with permission from <a class="vert_txt footer_link" href="https://mitpress.mit.edu/">The MIT Press</a>.</h3>
+    </div>
+    <ul>
+
+        <li><a href="http://nautil.us/about">About</a></li>
+        <li><a href="http://nautil.us/about">Terms of Service</a></li>
+        <li><a href="http://shop.nautil.us/nautilus-print-edition/">Subscribe</a></li>
+        <li><a href="http://nautil.us/contact">Contact/Jobs</a></li>
+        <li><a href="http://nautil.us/rss/all">RSS</a></li>
+        <li><a href="http://www.nautilusthink.org/support">Donate</a></li>
+    </ul>
+    </div>
+
+</footer>
+<script>
+
+    //TUNE UP PAGE
+
+    function adjust_page(){
+
+        var vid_width = $(".video-container").width();
+        var win_width = $(window).width();
+        if(win_width < 1110){
+
+
+        }
+
+        $(".video-container iframe").width(vid_width);
+        $(".video-container iframe").height(Math.round(.56*vid_width));
+    }
+
+    $(function(){
+
+        $("img.smll").each(function(){
+            $(this).removeClass('smll');
+            var url = $(this).attr('src');
+            var nurl = url.replace("_sm_","_");
+            url = nurl.replace(window.vertical+"_a",window.vertical+"-a");
+            $(this).attr('src',url);
+        });
+
+        adjust_page();
+        $(window).on('resize', function(){adjust_page();});
+
+
+    })
+
+
+
+</script>
+<script src="/js/top_menu.js"></script>
+
+<script>
+   var token = 'IsdLtt0Jpy10C9lV7FOotayLjZFL6l4ZRAqV3Cb3';
+    
+                
+            
+    
+    
+    
+        
+        
+    
+//--
+
+    var all_arrays=[], hndlr = null;
+//    var App = {};
+    var Dtr = {};
+    var Artd = {};
+
+   $(function() {
+
+
+
+
+       var doc_id = document.title.split(":");
+       doc_id = doc_id[0];
+
+       var diff_win = 0;
+       var win_tst = 0;
+       var grab = true;
+       var showlist = true;
+       var cid = null;
+
+       window.addEventListener('scroll', checkwindow);
+
+       function checkwindow() {
+
+           optimg();
+
+//return;//lazyload
+           $('main').each(function(i,e){
+               var docViewTop = $(window).scrollTop();
+               var docViewBottom = docViewTop + $(window).height();
+               var elemTop = $(e).offset().top+400;
+               if((elemTop <= docViewBottom) && (elemTop >= docViewTop)){
+                   var pth = "http://"+$(e).data('fpath');
+                   var ttl = $(e).data('title');
+//                   history.replaceState('', ttl, pth);
+                   document.title = doc_id+": "+ttl;
+               }
+           });
+
+           diff_win = $(window).scrollTop() + $(window).height();
+           win_tst = diff_win - $(document).height();
+           if (showlist && win_tst > -600) {
+               showlist = false;
+               $("div.ll_hide").first().show().removeClass('ll_hide');
+               if($("div.ll_hide").length){
+                   showlist = true;
+               }
+
+           }
+
+           if (grab && win_tst > -600) {
+               grab = false;
+               var $next_article = $(".ajx_article").first();
+               var frm = $next_article.data('frm');
+
+              if(typeof frm == 'undefined'){return;}
+               cid = $next_article.data('cid');
+               $.get( "/"+frm+"/"+cid, function( data ) {
+                   $next_article.replaceWith(data);
+                   $("#ad_"+cid).show();
+                   grab = true;
+                   optimg();
+
+               });
+           }
+       }
+
+       $('body').on('click', 'div.rdmr', function () {
+           var cid = $(this).data('cid');
+           var dats = $("main#main_"+cid).data();
+
+           var rls = dats.fpath.split("/");
+           rls.shift();
+           ga('set', { page: "/"+rls.join("/"), title: dats.title });
+           ga('require', 'displayfeatures');
+           ga('send', {
+               hitType: 'pageview',
+               page: 'mitp'+location.pathname
+           });
+           $(this).remove();
+       });
+       optimg();
+   });
+
+
+   function optimg(){
+        $("img.smll").each(function(){
+            $(this).removeClass('smll');
+            var url = $(this).attr('src');
+            var nurl = url.replace("_sm_","_");
+            url = nurl.replace(window.vertical+"_a",window.vertical+"-a");
+            $(this).attr('src',url);
+        });
+    }
+
+//============
+</script>
+
+</body>
+</html>
