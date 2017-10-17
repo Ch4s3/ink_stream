@@ -6,5 +6,5 @@ class Publication < ApplicationRecord
   validates_presence_of :name, :site
   validates_uniqueness_of :name, :site
   scope :new_york_times, -> { find_by(name: 'New York Times') }
-  scope :long_reads, -> { find_by(name: 'New York Times') }
+  scope :long_reads, -> { find_by(name: 'Long Reads') }
 end

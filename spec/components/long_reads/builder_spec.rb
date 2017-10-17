@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe NyTimes::Builder, type: :builder do
+RSpec.describe LongReads::Builder, type: :builder do
   let!(:publication) { Publication.create(name: 'Long Reads') }
 
   describe 'building an article' do
