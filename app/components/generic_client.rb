@@ -5,19 +5,19 @@
 class GenericClient
   attr_reader :code, :response_body
   include HTTParty
+  base_uri 'https://test.test'
 
   # intialize method for the client that sets the article's path
   #
   # @param path [String] a uri path
   # @param article_id [Integer] id of Article if one was already instanciated
   def initialize(path, article_id = nil)
-    base_uri # this call ensures that base_uri is implemented
     @path = path
     @article_id = article_id
   end
 
   # This method gets the article and calls the builder, returning
-  # an article if one is built
+  # an article if one is built. It will fail if base_uri is not set
   #
   # @return [Article]
   def article
@@ -29,10 +29,6 @@ class GenericClient
   end
 
   private
-
-  def base_uri
-    raise NotImplementedError, 'You must implement the base_uri method'
-  end
 
   def call_builder
     raise NotImplementedError, 'You must implement the call_builder method'

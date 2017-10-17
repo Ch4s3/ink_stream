@@ -4,11 +4,9 @@ module NyTimes
   # HTTParty client for the NewYork Times that takes an article path
   # and get's the text of the article
   class Client < GenericClient
-    private
+    base_uri 'nytimes.com'
 
-    def base_uri
-      'nytimes.com'
-    end
+    private
 
     def call_builder
       NyTimes::Builder.new(@response_body, @path, @article_id).article

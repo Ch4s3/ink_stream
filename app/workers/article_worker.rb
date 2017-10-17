@@ -4,6 +4,10 @@
 class ArticleWorker
   include Sidekiq::Worker
 
+  # kicks off the `ArticleWorker`
+  #
+  # @param url [String] a url
+  # @param article_id [Integer|nil] id of Article if one was already instanciated
   def perform(url, article_id = nil)
     uri = URI(url)
     client =
@@ -11,7 +15,9 @@ class ArticleWorker
         NyTimes::Client.new(uri.path, article_id)
       elsif uri.host =~ /longreads.com/
         LongReads::Client.new(uri.path, article_id)
+      elsif uri.host =~ /nautil.us/
+        Nautilus::Client.new(uri.path, article_id)
       end
-    client.article
+    client.try(:article)
   end
 end
