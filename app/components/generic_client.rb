@@ -9,8 +9,8 @@ class GenericClient
 
   # intialize method for the client that sets the article's path
   #
-  # @param path [String] a uri path
-  # @param article_id [Integer] id of Article if one was already instanciated
+  # @param [String] path a uri path
+  # @param [Integer] article_id id of Article if one was already instanciated
   def initialize(path, article_id = nil)
     @path = path
     @article_id = article_id
