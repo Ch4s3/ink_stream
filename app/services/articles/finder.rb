@@ -4,9 +4,9 @@ module Articles
     attr_reader :last_fetched
     # Finds articles based on publication name and article title or partial title
     #
-    # @param publication_name [String] the publications name or a blank string
-    # @param article_title [String] the article title
-    # @param offset [Number] the number of articles to offset by
+    # @param [String] publication_name the publications name or a blank string
+    # @param [String] article_title the article title
+    # @param [Number] offset the number of articles to offset by
     # @return [Article::ActiveRecord_Relation, Array] the resulting Articles or
     # an empty array
     def self.find(publication_name, article_title, offset = 0)
