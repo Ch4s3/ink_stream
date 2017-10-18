@@ -8,12 +8,12 @@
         <%= link_to('new publication', new_publication_path, 'arial-label': 'new publication')%>
       </li>
     <% end %>
-  <% end %>
-  <li class='side-nav-link'>
-    <%- if user_signed_in? %>
+    <li class='side-nav-link'>
       <%= link_to('sign out', destroy_user_session_path, method: :delete, 'arial-label': 'sign out')%>
-    <%- else %>
+    </li>
+  <%- else %>
+    <li class='side-nav-link'>
       <%= link_to('sign in', new_user_session_path, 'arial-label': 'sign in')%>
-    <% end %>
-  </li>
+    </li>
+  <% end %>
 </ul>

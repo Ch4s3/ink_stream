@@ -23,20 +23,20 @@ document.addEventListener('turbolinks:load', function() {
     }
   }
 
-  // TouchEvent listener https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/touches
-  document.addEventListener('touchstart', function(event) {
-    const touchedToggle = toggle.contains(event.target);
-    const isTouchInside = mobileMenu.contains(event.target);
-    if (menuActive() && !isTouchInside && !touchedToggle) {
+  handleClickOrTouch = function(event) {
+    const clickedOrTouchedToggle = toggle.contains(event.target);
+    const isClickOrTouchInside = mobileMenu.contains(event.target);
+    if (menuActive() && !isClickOrTouchInside && !clickedOrTouchedToggle) {
       hideNav();
     }
+  }
+
+  // TouchEvent listener https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/touches
+  document.addEventListener('touchstart', function(event) {
+    handleClickOrTouch(event);
   });
   
   document.addEventListener('click', function(event) {
-    const clickedOnToggle = toggle.contains(event.target);
-    const isClickInside = mobileMenu.contains(event.target);
-    if ( menuActive() && !isClickInside && !clickedOnToggle) {
-      hideNav();
-    }
+    handleClickOrTouch(event);
   });
-})
+});
