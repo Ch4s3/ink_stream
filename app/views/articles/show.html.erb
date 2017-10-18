@@ -2,7 +2,7 @@
   <div class='articles'>
     <div class='article'>
       <h1><%= @article.title %></h1>
-      <p><%= @article.full_text %></p>
+      <div class='article-text'><%= @article.full_text %></div>
     </div>
     <div class='bottom-links'>
       <%= link_to('back to search', root_url(), class: 'articles-list-link')%>
