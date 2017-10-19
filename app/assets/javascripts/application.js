@@ -13,4 +13,5 @@
 //= require rails-ujs
 //= require turbolinks
 //= require navToggle
+//= require getText
 //= require highlight

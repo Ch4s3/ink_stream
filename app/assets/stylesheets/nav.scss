@@ -6,31 +6,35 @@ nav {
 }
 .nav-container{
   height: 7rem;
-  max-width: 1000px;
+  max-width: 75%;
   margin: 0 auto;
+  
+
 }
 nav .logo {
-  margin-top: 2rem;
-  margin-left: 5rem;
+  margin-top: 1.75rem;
+  margin-left: 8rem;
   height: 4rem;
+  float: left;
 }
 nav p {
+  margin-top: 2rem;
   padding-left: 2rem;
   line-height: 3rem;
   font-size: 3rem;
   font-weight: 400;
-  display: inline;
   position: relative;
-  bottom: 1rem;
+  vertical-align: top;
+  float: left;
 }
 nav .nav-links { 
   float: right;
+  vertical-align: top;
   ul { 
     padding: 0px;
     margin: 0px;
     text-align: center;
     display: inline-block;
-    vertical-align:top;
   }
   li {
     list-style: none;
@@ -38,6 +42,7 @@ nav .nav-links {
     height: 7rem;
     background-color: $white;
     padding: 0 1rem 0 1rem;
+    margin-bottom: 0;
     a { 
       font-weight: 400;
       line-height: 7rem;

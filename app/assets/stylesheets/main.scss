@@ -45,9 +45,11 @@ main {
 .new_articles_search_form {
   margin-top: 3rem;
 }
-
+aside {
+  grid-area: a;
+}
 .article {
-  max-width: 80vw;
+  max-width: 70vw;
 }
 .articles, .publications {
   z-index: 1;
@@ -62,10 +64,10 @@ main {
   margin-left: 1em;
 }
 
-.bottom-links {
+footer.bottom-links {
   font-weight: 400;
   min-height: 2rem;
-  padding: 0.5rem;
+  padding: 1.5rem 0 1.5rem 0;
   grid-area: b;
 }
 .flash {
