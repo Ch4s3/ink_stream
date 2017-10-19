@@ -10,11 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171016032130) do
+ActiveRecord::Schema.define(version: 20171018044338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
+  enable_extension "pg_stat_statements"
+
+  create_table "annotations", force: :cascade do |t|
+    t.string "text"
+    t.string "citation"
+    t.integer "start"
+    t.integer "end"
+    t.string "ref_text"
+    t.bigint "article_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_annotations_on_article_id"
+    t.index ["user_id"], name: "index_annotations_on_user_id"
+  end
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -69,5 +84,7 @@ ActiveRecord::Schema.define(version: 20171016032130) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "annotations", "articles"
+  add_foreign_key "annotations", "users"
   add_foreign_key "articles", "publications"
 end

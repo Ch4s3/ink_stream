@@ -2,7 +2,7 @@
 
 # Controller for Articles and related search functionality
 class ArticlesController < ApplicationController
-  before_action :find_article, only: :show
+  before_action :find_article_and_annotations, only: :show
   before_action :validate_search, only: :results
   before_action :authenticate_user!, only: %i[new create]
 
@@ -46,8 +46,9 @@ class ArticlesController < ApplicationController
     flash_and_redirect(error_message) if search_params['title'].blank?
   end
 
-  def find_article
+  def find_article_and_annotations
     @article = Article.find_by(uuid: show_params['id'])
+    @annotations = @article.annotations
   end
 
   def article_params

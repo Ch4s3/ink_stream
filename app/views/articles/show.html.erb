@@ -1,11 +1,33 @@
 <% cache @article do %>
   <div class='articles'>
-    <div class='article'>
-      <h1><%= @article.title %></h1>
-      <p><%= @article.full_text %></p>
-    </div>
-    <div class='bottom-links'>
-      <%= link_to('back to search', root_url(), class: 'articles-list-link')%>
-    </div>
+    <div class='article-form'></div>
+    <article class='article'>
+      <header>
+        <h1><%= @article.title %></h1>
+      </header>
+      <section>
+        <div class='article-text' data-article-uuid=<%= @article.uuid %> data-user-id=<%= current_user.id %> >
+          <%= @article.full_text %>
+        </div>
+      </section>
+    </article>
   </div>
+  <%- if @annotations.length > 0 %>
+    <aside class='aside-annotations'>
+      <h2>Annotations</h2>
+      <% cache @annotations do %>
+        <%- @annotations.each do |annotation|%>
+          <% cache annotation do %>
+            <section class="annotation">
+              <b><%= annotation.text %></b>
+              <b><%= annotation.citation %></b>
+            </section>
+          <% end %>
+        <% end %>
+      <% end %>
+    </aside>
+  <% end %>
+  <footer class='bottom-links'>
+    <%= link_to('back to search', root_url(), class: 'articles-list-link')%>
+  </footer>
 <% end %>
