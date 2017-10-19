@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'articles#search'
   get 'articles/results'
   # resources
+  resources :annotations, only: [:create]
   resources :articles, only: [:new, :create, :show]
   resources :publications, only: [:index, :new, :create, :show]
 end

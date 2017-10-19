@@ -2,13 +2,13 @@
   position: absolute;
   display: grid;
   width: 100vw;
-  grid-template-columns: 10%, auto, auto,10%;
+  grid-template-columns: 10%, auto, auto, 10%;
   grid-template-rows: auto;
   grid-gap: 1rem;
   grid-template-areas: 
     "t t t t"
-    ". m m ."
-    ". m m ."
+    ". m m a"
+    ". m m a"
     "b b b b";
 }
 

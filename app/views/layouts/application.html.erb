@@ -1,13 +1,20 @@
+<!-- Doctype HTML5 -->
 <!DOCTYPE html>
 <html>
   <head>
-    <title>InkStream</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="News link aggregator and annotator">
+    <title>ink stream</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon.png' %>
+    <%= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= javascript_pack_tag 'application' %>
   </head>
 
-  <body>
+  <body lang="en" dir="ltr">
     <div class="screen"></div>
     <nav role='navigation'>
       <div class='nav-container'>
