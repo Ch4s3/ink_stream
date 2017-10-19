@@ -12,6 +12,7 @@ class AnnotationForm extends React.Component {
     this.state = { 
       annotationText: '',
       articleUUID: '',
+      userID: '',
       citation: '',
       visible: false,
       startChar: null,
@@ -30,6 +31,10 @@ class AnnotationForm extends React.Component {
     const _this = this
     const articleText = document.querySelector('.article-text');
     if(articleText) {
+      this.setState({
+        articleUUID: articleText.dataset.articleUuid,
+        userID: articleText.dataset.userId
+      })
       articleText.addEventListener('mouseup', function(e) { _this.handleSelect(e) });
     }
   }
@@ -97,8 +102,6 @@ class AnnotationForm extends React.Component {
     if(data) {
       this.setState({
         visible: true,
-        articleUUID: data.articleUUI,
-        citation: data.citatio,
         startChar: data.startChar,
         endChar: data.endChar,
         selectedText: data.selectedText,
@@ -120,12 +123,13 @@ class AnnotationForm extends React.Component {
   }
 
   postData(e) {
+    const _this = this;
     const request = new XMLHttpRequest();
     request.open('POST', '/annotations', true);
     request.setRequestHeader('Content-Type', 'application/json')
     request.onload = function() {
       if (request.status === 200) {
-        this.hide();
+        _this.hide();
         const resData = JSON.parse(request.responseText);
         console.log(resData)
       } else {
@@ -138,7 +142,15 @@ class AnnotationForm extends React.Component {
       console.log(e);
     };
     const data = {
-      annotations_form: { text: this.state.annotationText, citation: this.state.citation}
+      annotations_form: { 
+        user_id: this.state.userID,
+        article_uuid: this.state.articleUUID, 
+        text: this.state.annotationText, 
+        citation: this.state.citation,
+        start: this.state.startChar,
+        end: this.state.endChar,
+        ref_text: this.state.selectedText 
+      }
     }
     request.send(JSON.stringify(data))
   }
@@ -148,6 +160,6 @@ class AnnotationForm extends React.Component {
 document.addEventListener('turbolinks:load', () => {
   const articleFomrDiv = document.querySelector('.article-form');
   if(articleFomrDiv){
-    ReactDOM.render(<AnnotationForm articleUUID="12345" />, articleFomrDiv)
+    ReactDOM.render(<AnnotationForm annotationText=''/>, articleFomrDiv)
   }
 })

@@ -4,7 +4,9 @@ class AnnotationsController < ApplicationController
   before_action :authenticate_user!, only: :create
 
   def create
-    annotation = Annotation.new(annotation_params)
+    article = Article.find_by(uuid: article_and_user[:article_uuid])
+    user = User.find(article_and_user[:user_id].to_i)
+    annotation = Annotation.new(annotation_params.merge(user: user, article: article))
     if annotation.save
       render json: { success: 'annotation saved' }, status: 200
     else
@@ -14,7 +16,14 @@ class AnnotationsController < ApplicationController
 
   private
 
+  def article_and_user
+    params.require(:annotations_form).permit(:user_id, :article_uuid,)
+  end
+
   def annotation_params
-    params.require(:annotations_form).permit(:text, :citation)
+    params.require(:annotations_form)
+          .permit(:text,
+                  :citation, :start_char, :end_char,
+                  :selected_text)
   end
 end

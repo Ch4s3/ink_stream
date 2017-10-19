@@ -11,12 +11,23 @@
         </div>
       </section>
     </article>
+  </div>
+  <%- if @annotations.length > 0 %>
     <aside class='aside-annotations'>
+      <h2>Annotations</h2>
       <% cache @annotations do %>
+        <%- @annotations.each do |annotation|%>
+          <% cache annotation do %>
+            <section class="annotation">
+              <b><%= annotation.text %></b>
+              <b><%= annotation.citation %></b>
+            </section>
+          <% end %>
+        <% end %>
       <% end %>
     </aside>
-    <footer class='bottom-links'>
-      <%= link_to('back to search', root_url(), class: 'articles-list-link')%>
-    </footer>
-  </div>
+  <% end %>
+  <footer class='bottom-links'>
+    <%= link_to('back to search', root_url(), class: 'articles-list-link')%>
+  </footer>
 <% end %>
