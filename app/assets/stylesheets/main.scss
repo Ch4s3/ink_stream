@@ -7,6 +7,15 @@ body {
   background-color: $white
 }
 
+::selection {
+  color: $primary-color;
+  background: $magenta; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  color: $primary-color;  
+  background: $magenta; /* Gecko Browsers */
+}
+
 main {
   padding: 0 0 2rem 0;
 }

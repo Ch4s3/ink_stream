@@ -4,15 +4,16 @@ getText = function getText(e) {
   const text = (document.all) ? document.selection.createRange().text : document.getSelection();
   const startChar = document.getSelection().anchorOffset - 20
   const endChar = document.getSelection().extentOffset - 20
-  if(articleUUID && text.toString() !== '') {
-    const x = e.offsetX + 16
-    const y = e.clientY + 8
+  const texString = text.toString()
+  if(articleUUID &&  texString !== '' && texString.length >= 3) {
+    const x = e.offsetX + 128
+    const y = e.offsetY + 128
     data = {
       xPos: x, 
       yPos: y,
-      articleID: articleUUID,
+      articleUUID: articleUUID,
       startChar: startChar, endChar: endChar,
-      selectedText: text.toString()
+      selectedText: texString
     }
   }
   return data
