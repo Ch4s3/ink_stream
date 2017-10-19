@@ -6,21 +6,23 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
-const Hello = props => (
-  <div>Hello {props.name}!</div>
+const AnnotationForm = props => (
+  <div className='annotation-form'>
+    wow
+  </div>
 )
 
-Hello.defaultProps = {
-  name: 'David'
+AnnotationForm.defaultProps = {
+  name: ''
 }
 
-Hello.propTypes = {
+AnnotationForm.propTypes = {
   name: PropTypes.string
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <Hello name="React" />,
-    document.body.appendChild(document.createElement('div')),
-  )
+  const articleFomrDiv = document.querySelector('.article-form');
+  if(articleFomrDiv){
+    ReactDOM.render(<AnnotationForm name="React" />, articleFomrDiv)
+  }
 })
