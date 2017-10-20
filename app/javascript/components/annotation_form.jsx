@@ -39,55 +39,37 @@ class AnnotationForm extends React.Component {
     }
   }
   render() {
-    const csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content");
-    const formStyle = {
-      padding: '1rem',
-      backgroundColor: '#4EB9FF',
-    }
+    const formStyle = {padding: '1rem', backgroundColor: '#4EB9FF'}
     const style = {
-      color: '#00080C',
-      maxWidth: '34rem',
-      zIndex: 100,
-      position: 'absolute',
-      top: this.state.yPos,
-      left: this.state.xPos
+      color: '#00080C', maxWidth: '34rem',
+      zIndex: 100, position: 'absolute',
+      top: this.state.yPos, left: this.state.xPos
     }
-
     const selection = this.state.selectedText
     let form
     if (this.state.visible === true) {
       form = 
         <div style={formStyle}>
           <h4>annotation</h4>
-          <blockquote style={{fontSize: '1rem'}}>
-            {selection}
-          </blockquote>
+          <blockquote style={{fontSize: '1rem'}}>{selection}</blockquote>
           <form onSubmit={this.handleSubmit}>
             <fieldset>
               <label htmlFor='annotation-form-annotation-text'>Annotation</label>
               <textarea id='annotation-form-annotation-text'
                 name='annotations_form[annotation_text]' 
                 onChange={this.setAnnotation}
-                value={this.state.annotationText}
-              />
+                value={this.state.annotationText}/>
               <label htmlFor='annotation-form-citation-text'>Citation</label>
               <input type='text' id='annotation-form-citation-text'
                 onChange={this.setCitation}
                 name='annotations_form[citation_text]'
-                value={this.state.citation}
-              />
-              <button className='button button-outline'>
-                submit
-              </button>
+                value={this.state.citation}/>
+              <button className='button button-outline'>submit</button>
             </fieldset>
           </form>
         </div>
     }
-    return (
-      <div style={style}>
-        {form}
-      </div>
-    );
+    return (<div style={style}>{form}</div>);
   }
   setAnnotation(e) {
     this.setState({ annotationText: e.target.value });
