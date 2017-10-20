@@ -64,13 +64,13 @@ class AnnotationForm extends React.Component {
           </blockquote>
           <form onSubmit={this.handleSubmit}>
             <fieldset>
-              <label for='annotation-form-annotation-text'>Annotation</label>
+              <label htmlFor='annotation-form-annotation-text'>Annotation</label>
               <textarea id='annotation-form-annotation-text'
                 name='annotations_form[annotation_text]' 
                 onChange={this.setAnnotation}
                 value={this.state.annotationText}
               />
-              <label for='annotation-form-citation-text'>Citation</label>
+              <label htmlFor='annotation-form-citation-text'>Citation</label>
               <input type='text' id='annotation-form-citation-text'
                 onChange={this.setCitation}
                 name='annotations_form[citation_text]'

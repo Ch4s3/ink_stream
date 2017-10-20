@@ -23,7 +23,6 @@ gem 'sidekiq', '< 6'
 gem 'skylight'
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data'
-gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 
 group :development, :test do

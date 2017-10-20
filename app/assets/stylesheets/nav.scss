@@ -72,6 +72,7 @@ and (-webkit-min-device-pixel-ratio: 2){
   }
   nav .logo {
     height: 7rem;
+    margin-left: 0;
   }
   nav p {
     font-size: 6rem;
@@ -84,15 +85,14 @@ and (-webkit-min-device-pixel-ratio: 2){
     visibility: hidden;
   }
   nav button.nav-toggle {
-    display: inline-block;
+    float: left;
     visibility: visible;
     position: relative;
-    width: 8rem;
+    left: -11rem;
+    margin-left: 3rem;
+    width: 12rem;
     height: 100%;
     padding: 0;
-    margin-bottom: 0;
-    margin-left: 2rem;
-    bottom: 1rem;
   }
 
   nav .nav-toggle svg {
