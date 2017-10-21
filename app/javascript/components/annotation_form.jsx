@@ -30,10 +30,11 @@ class AnnotationForm extends React.Component {
   componentDidMount() {
     const _this = this
     const articleText = document.querySelector('.article-text');
-    if(articleText) {
+    const userID = articleText.dataset.userId
+    if(articleText && userID) {
       this.setState({
         articleUUID: articleText.dataset.articleUuid,
-        userID: articleText.dataset.userId
+        userID: userID
       })
       articleText.addEventListener('mouseup', function(e) { _this.handleSelect(e) });
     }
