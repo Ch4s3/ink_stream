@@ -112,6 +112,7 @@ class AnnotationForm extends React.Component {
     request.onload = function() {
       if (request.status === 200) {
         _this.hide();
+        Turbolinks.visit(location.toString());
         const resData = JSON.parse(request.responseText);
         console.log(resData)
       } else {
@@ -141,7 +142,7 @@ class AnnotationForm extends React.Component {
 
 document.addEventListener('turbolinks:load', () => {
   const articleFomrDiv = document.querySelector('.article-form');
-  if(articleFomrDiv){
+  if (articleFomrDiv) {
     ReactDOM.render(<AnnotationForm annotationText=''/>, articleFomrDiv)
   }
 })
