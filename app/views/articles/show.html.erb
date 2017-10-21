@@ -16,12 +16,10 @@
     <aside class='aside-annotations'>
       <h2>Annotations</h2>
       <%- @annotations.each do |annotation|%>
-        <% cache annotation do %>
-          <section class="annotation">
-            <b><%= annotation.text %></b>
-            <b><%= annotation.citation %></b>
-          </section>
-        <% end %>
+        <section class="annotation">
+          <b><%= annotation.text %></b>
+          <b><%= annotation.citation %></b>
+        </section>
       <% end %>
     </aside>
   <% end %>
