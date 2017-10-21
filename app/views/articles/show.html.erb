@@ -1,7 +1,7 @@
 <% cache @article do %>
   <div class='articles'>
     <div class='article-form'></div>
-    <article class='article'>
+    <article id='article' class='article' data-turbolinks-permanent>
       <header>
         <h1><%= @article.title %></h1>
       </header>
@@ -15,14 +15,12 @@
   <%- if @annotations.length > 0 %>
     <aside class='aside-annotations'>
       <h2>Annotations</h2>
-      <% cache @annotations do %>
-        <%- @annotations.each do |annotation|%>
-          <% cache annotation do %>
-            <section class="annotation">
-              <b><%= annotation.text %></b>
-              <b><%= annotation.citation %></b>
-            </section>
-          <% end %>
+      <%- @annotations.each do |annotation|%>
+        <% cache annotation do %>
+          <section class="annotation">
+            <b><%= annotation.text %></b>
+            <b><%= annotation.citation %></b>
+          </section>
         <% end %>
       <% end %>
     </aside>

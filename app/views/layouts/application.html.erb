@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
     <meta name="description" content="News link aggregator and annotator">
     <title>ink stream</title>
     <%= csrf_meta_tags %>
@@ -15,23 +16,66 @@
 
   <body lang="en" dir="ltr">
     <div class="screen"></div>
-    <nav role='navigation'>
+    <%# BEGIN NAV SECTION %>
+    <nav id='nav' role='navigation' data-turbolinks-permanent>
       <div class='nav-container'>
-        <button class='button button-clear nav-toggle' aria-label='toggle nav'>
-          <%= image_tag('kabob.svg') %>
-        </button>
+        <% if browser.device.mobile? %>
+          <button class='button button-clear nav-toggle' aria-label='toggle nav'>
+            <%= image_tag('kabob.svg') %>
+          </button>
+        <% end %>
         <%= link_to(root_url, class: 'logo-link', 'arial-label': 'home') do %>
           <%= image_tag('ink.svg', class: 'logo', alt: 'logo, ink drops') %>
         <% end %>
         <p>ink stream</p>
-        <div class='top-menu nav-links'>
-          <%= render('layouts/nav_list') %>
-        </div>
-        <div class='mobile-menu side-nav-grid'>
-          <%= render('layouts/nav_list') %>
-        </div>
+        <% if browser.device.mobile? %>
+          <div class='mobile-menu side-nav-grid'>
+            <ul class='side-nav-list'>
+              <%- if user_signed_in? %>
+                <li class='side-nav-link'>
+                  <%= link_to('new article', new_article_path, 'arial-label': 'new article')%>
+                </li>
+                <%- if current_user.admin? %>
+                  <li class='side-nav-link'>
+                    <%= link_to('new publication', new_publication_path, 'arial-label': 'new publication')%>
+                  </li>
+                <% end %>
+                <li class='side-nav-link'>
+                  <%= link_to('sign out', destroy_user_session_path, method: :delete, 'arial-label': 'sign out')%>
+                </li>
+              <%- else %>
+                <li class='side-nav-link'>
+                  <%= link_to('sign in', new_user_session_path, 'arial-label': 'sign in')%>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        <% else %>
+          <div class='top-menu nav-links'>
+            <ul class='side-nav-list'>
+              <%- if user_signed_in? %>
+                <li class='side-nav-link'>
+                  <%= link_to('new article', new_article_path, 'arial-label': 'new article')%>
+                </li>
+                <%- if current_user.admin? %>
+                  <li class='side-nav-link'>
+                    <%= link_to('new publication', new_publication_path, 'arial-label': 'new publication')%>
+                  </li>
+                <% end %>
+                <li class='side-nav-link'>
+                  <%= link_to('sign out', destroy_user_session_path, method: :delete, 'arial-label': 'sign out')%>
+                </li>
+              <%- else %>
+                <li class='side-nav-link'>
+                  <%= link_to('sign in', new_user_session_path, 'arial-label': 'sign in')%>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
       </div>
     </nav>
+    <%# END NAV SECTION %>
     <main role="main">
       <div class="wrapper">
         <%= render "layouts/flash_message"%>

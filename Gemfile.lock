@@ -66,6 +66,7 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     brakeman (4.0.1)
+    browser (2.5.1)
     builder (3.2.3)
     bullet (5.6.1)
       activesupport (>= 3.0.0)
@@ -112,6 +113,7 @@ GEM
       redis (~> 3.2)
     faraday (0.13.1)
       multipart-post (>= 1.2, < 3)
+    fast_blank (1.0.0)
     fast_stack (0.2.0)
     fasterer (0.3.2)
       colorize (~> 0.7)
@@ -457,12 +459,14 @@ PLATFORMS
 
 DEPENDENCIES
   brakeman
+  browser
   bullet
   byebug
   coveralls
   devise
   faker
   fakeredis
+  fast_blank
   fast_stack
   flamegraph
   guard-bundler
