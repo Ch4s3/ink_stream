@@ -16,7 +16,7 @@
     <aside class='aside-annotations'>
       <h2>Annotations</h2>
       <%- @annotations.each do |annotation|%>
-        <section class="annotation">
+        <section id=<%="annotation-#{annotation.id}"%> class="annotation" data-turbolinks-permanent>
           <b><%= annotation.text %></b>
           <b><%= annotation.citation %></b>
         </section>
