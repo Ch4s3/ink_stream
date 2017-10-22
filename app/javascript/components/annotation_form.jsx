@@ -140,7 +140,6 @@ class AnnotationForm extends React.Component {
   }
 }
 
-
 document.addEventListener('turbolinks:load', () => {
   const articleFomrDiv = document.querySelector('.article-form');
   if (articleFomrDiv) {
