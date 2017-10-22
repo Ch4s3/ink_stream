@@ -12,6 +12,9 @@
     <%= favicon_link_tag 'favicon.png' %>
     <%= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true  %>
+    <% if(controller_name == 'articles' && action_name == 'show')%>
+      <%= javascript_pack_tag 'annotation', 'data-turbolinks-track': 'reload', defer: true  %>
+    <% end %>
   </head>
 
   <body lang="en" dir="ltr">
@@ -78,7 +81,16 @@
     <%# END NAV SECTION %>
     <main role="main">
       <div class="wrapper">
-        <%= render "layouts/flash_message"%>
+        <%# BEGIN FLASH HANDLER %>
+        <%- if flash.keys.length > 0 %>
+          <%- flash.each do |flash| %>
+            <div class="flash <%= flash[0] %>">
+              <%= flash[1] %>
+              <button onClick='removeFlash(event)' class="button button-clear dismiss-flash" aria-label="Close" value="x">x</button>
+            </div>
+          <% end %>
+        <% end %>
+        <%# END FLASH HANDLER %>
         <%= yield %>
       </div>
     </main>
