@@ -33,6 +33,7 @@ class ArticlesController < ApplicationController
 
   def show
     flash_and_redirect('The requested article does not exist') unless @article
+    fresh_when last_modified: @article.updated_at.utc, strong_etag: @article
   end
 
   def search
@@ -47,8 +48,8 @@ class ArticlesController < ApplicationController
   end
 
   def find_article_and_annotations
-    @article = Article.find_by(uuid: show_params['id'])
-    @annotations = Annotation.where(article: @article)
+    @article ||= Article.find_by(uuid: show_params['id'])
+    @annotations ||= Annotation.where(article: @article)
   end
 
   def article_params
