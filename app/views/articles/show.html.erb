@@ -13,15 +13,19 @@
     </article>
   </div>
   <%- if @annotations.length > 0 %>
-    <aside class='aside-annotations'>
-      <h2>Annotations</h2>
-      <%- @annotations.each do |annotation|%>
-        <section class="annotation">
-          <b><%= annotation.text %></b>
-          <b><%= annotation.citation %></b>
-        </section>
-      <% end %>
-    </aside>
+    <% cache(["annotation_list", @annotations.map(&:id), @annotations.maximum(:updated_at)]) do %>
+      <aside class='aside-annotations'>
+        <h2>Annotations</h2>
+        <%- @annotations.each do |annotation|%>
+          <% cache(annotation) do %>
+            <section class="annotation">
+              <b><%= annotation.text %></b>
+              <b><%= annotation.citation %></b>
+            </section>
+            <% end %>
+        <% end %>
+      </aside>
+    <% end %>
   <% end %>
   <footer class='bottom-links'>
     <%= link_to('back to search', root_url(), class: 'articles-list-link')%>
