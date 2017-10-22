@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018044338) do
+ActiveRecord::Schema.define(version: 20171022012754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
-  enable_extension "pg_stat_statements"
 
   create_table "annotations", force: :cascade do |t|
     t.string "text"
@@ -27,6 +26,7 @@ ActiveRecord::Schema.define(version: 20171018044338) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["article_id", "updated_at"], name: "index_annotations_on_article_id_and_updated_at"
     t.index ["article_id"], name: "index_annotations_on_article_id"
     t.index ["user_id"], name: "index_annotations_on_user_id"
   end
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20171018044338) do
     t.index ["publication_id"], name: "index_articles_on_publication_id"
     t.index ["title", "publication_id"], name: "index_articles_on_title_and_publication_id"
     t.index ["title"], name: "index_articles_on_title"
+    t.index ["uuid"], name: "index_articles_on_uuid"
   end
 
   create_table "pghero_query_stats", force: :cascade do |t|
