@@ -152,14 +152,12 @@
  input[type='number'],
  input[type='password'],
  input[type='search'],
- input[type='tel'],
  input[type='text'],
  input[type='url'],
  textarea,
  select {
    -webkit-appearance: none;
       -moz-appearance: none;
-           appearance: none;
    background-color: transparent;
    border: 0.2rem solid $white;
    border-radius: .4rem;
@@ -174,7 +172,6 @@
  input[type='number']:focus,
  input[type='password']:focus,
  input[type='search']:focus,
- input[type='tel']:focus,
  input[type='text']:focus,
  input[type='url']:focus,
  textarea:focus,
@@ -230,29 +227,15 @@
    color: #606c76;
  }
  
- dl,
- ol,
  ul {
    list-style: none;
    margin-top: 0;
    padding-left: 0;
  }
  
- dl dl,
- dl ol,
- dl ul,
- ol dl,
- ol ol,
- ol ul,
- ul dl,
- ul ol,
  ul ul {
    font-size: 90%;
    margin: 1.5rem 0 1.5rem 3.0rem;
- }
- 
- ol {
-   list-style: decimal inside;
  }
  
  ul {
@@ -261,8 +244,6 @@
  
  .button,
  button,
- dd,
- dt,
  li {
    margin-bottom: 1.0rem;
  }
@@ -275,10 +256,7 @@
  }
  
  blockquote,
- dl,
- figure,
  form,
- ol,
  p,
  pre,
  table,
@@ -370,12 +348,4 @@
    clear: both;
    content: ' ';
    display: table;
- }
- 
- .float-left {
-   float: left;
- }
- 
- .float-right {
-   float: right;
  }

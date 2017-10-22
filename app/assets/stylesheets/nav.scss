@@ -8,8 +8,6 @@ nav {
   height: 7rem;
   max-width: 75%;
   margin: 0 auto;
-  
-
 }
 nav .logo {
   margin-top: 1.75rem;
@@ -54,43 +52,46 @@ nav .nav-links {
     a { color: $white; }
   }
 }
-
-nav .nav-toggle {
-  visibility: hidden;
+@media only screen 
+and (min-device-width: 741px) 
+and (max-device-width: 980px) {
+  .nav-container{
+    width: 90vw;
+    max-width: 90%;
+  }
 }
-
-nav .mobile-menu {
-  visibility: hidden;
-}
-
 @media only screen 
 and (min-device-width: 320px) 
-and (max-device-width: 667px) 
+and (max-device-width: 740px) 
 and (-webkit-min-device-pixel-ratio: 2){
   nav {
-    height: 10rem;
+    height: 9rem;
   }
-  nav .logo {
-    height: 7rem;
-    margin-left: 0;
-  }
-  nav p {
-    font-size: 6rem;
-    line-height: 7rem;
-  }
+  
   .nav-container{
     height: 10rem;
+    width: 100vw;
+    margin: 0;
+    max-width: 100%;
   }
-  nav .nav-links {
-    visibility: hidden;
+
+  nav .logo {
+    margin-top: 3rem;
+    height: 4rem;
+    float: left;
+    margin-left: 4.5rem;
+  }
+
+  nav p {
+    margin-top: 3.5rem;
+    font-size: 3rem;
+    float: left;
   }
   nav button.nav-toggle {
     float: left;
     visibility: visible;
-    position: relative;
-    left: -11rem;
     margin-left: 3rem;
-    width: 12rem;
+    width: 4rem;
     height: 100%;
     padding: 0;
   }
@@ -104,9 +105,9 @@ and (-webkit-min-device-pixel-ratio: 2){
     z-index: 9999;
     position: fixed;
     height: 100vh;
-    width: 30em;
+    width: 20em;
     top: 0;
-    left: -30em;
+    left: -20em;
   }
 
   nav ul.side-nav-list {
@@ -125,13 +126,13 @@ and (-webkit-min-device-pixel-ratio: 2){
 
   nav .mobile-menu.active {
     visibility: visible;
-    transform: translateX(30em);
+    transform: translateX(20em);
     -webkit-transition: transform 0.3s ease-in;
     transition: transform 0.3s ease-in;
   }
   nav .mobile-menu.slide-back {
     visibility: visible;
-    transform: translateX(-30em);
+    transform: translateX(-20em);
     -webkit-transition: transform 0.3s ease-in;
     transition: transform 0.3s ease-in;
   }
