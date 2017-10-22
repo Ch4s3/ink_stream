@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20171022012754) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
-  enable_extension "pg_stat_statements"
 
   create_table "annotations", force: :cascade do |t|
     t.string "text"
