@@ -104,6 +104,8 @@ const preload = function(event) {
         let cache = Turbolinks.controller.cache.get(location);
         if (!cache) {
           cache = Turbolinks.controller.cache.get(`prefetch${location}`);
+        }
+        if (!cache) {
           const request = new Turbolinks.CachedHttpRequest(null, location, window.location);
           Turbolinks.controller.cache.put(`prefetch${location}`, request);
           return(request.send());
