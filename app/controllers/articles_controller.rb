@@ -49,7 +49,7 @@ class ArticlesController < ApplicationController
 
   def find_article_and_annotations
     @article ||= Article.find_by(uuid: show_params['id'])
-    @annotations ||= Annotation.where(article: @article)
+    @annotations = Annotation.where(article: @article)
   end
 
   def article_params
