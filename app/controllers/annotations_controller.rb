@@ -8,7 +8,7 @@ class AnnotationsController < ApplicationController
     user = User.find(article_and_user[:user_id].to_i)
     annotation = Annotation.new(annotation_params.merge(user: user, article: article))
     if annotation.save
-      render json: { success: 'annotation saved' }, status: 200
+      render json: { success: 'annotation saved' }, status: 201
     else
       render json: { failure: annotation.errors }, status: 400
     end
