@@ -3,7 +3,7 @@
     <ul>
       <%- @articles.each do |article| %>
         <li>
-          <%= link_to(article.title, article_path(article.uuid)) %>
+          <%= link_to(article.title, article_path(article.uuid), data: { turbolinks_preload: true }) %>
         </li>
       <% end %>
     </ul>
@@ -14,7 +14,8 @@
             publications: @publications, 
             title: @title_search, 
             search_offset: (@search_offset - 10).to_s }),
-          class: 'articles-list-link') %>
+            data: { turbolinks_preload: true },
+            class: 'articles-list-link') %>
       <% end %>
       <%- if @articles.length == 10 %>
         <%= link_to('next 10 >', 
@@ -22,7 +23,8 @@
             publications: @publications, 
             title: @title_search, 
             search_offset: (@search_offset + 10).to_s }), 
-          class: 'articles-list-link') %>
+            data: { turbolinks_preload: true }, 
+            class: 'articles-list-link') %>
       <% end %>
       <%= link_to('back to search', root_url(), class: 'articles-list-link')%>
     </div>
