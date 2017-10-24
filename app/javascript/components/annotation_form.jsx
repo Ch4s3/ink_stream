@@ -111,7 +111,7 @@ class AnnotationForm extends React.Component {
     request.open('POST', '/annotations', true);
     request.setRequestHeader('Content-Type', 'application/json')
     request.onload = function() {
-      if (request.status === 200) {
+      if (request.status === 201) {
         _this.hide();
         Turbolinks.visit(location.toString());
         const resData = JSON.parse(request.responseText);
