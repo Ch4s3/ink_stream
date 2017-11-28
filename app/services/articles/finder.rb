@@ -4,20 +4,19 @@ module Articles
     attr_reader :last_fetched
     # Finds articles based on publication name and article title or partial title
     #
-    # @param [String] publication_name the publications name or a blank string
-    # @param [String] article_title the article title
-    # @param [Number] offset the number of articles to offset by
+    # @param [ArticlesSearchForm] search
     # @return [Article::ActiveRecord_Relation, Array] the resulting Articles or
     # an empty array
-    def self.find(publication_name, article_title, offset = 0)
-      cache_key = "articles/#{publication_name}/#{article_title}/offset=#{offset}"
+    def self.find(search)
+      title = search.title
+      publication = search.selected_publication
+      offset = search.search_offset
+      cache_key = "articles/#{title}/offset=#{offset}&publication=#{publication}"
       Rails.cache.fetch(cache_key, expires_in: 10.minutes) do
-        if publication_name.strip.empty?
-          Article.fuzzy_title(article_title).ten_ids_with_offset(offset)
+        if publication.strip.empty?
+          Article.fuzzy_title(title).ten_ids_with_offset(offset)
         else
-          Article.joins(:publication).fuzzy_title(article_title)
-                 .where('publications.name = ?', publication_name)
-                 .ten_ids_with_offset(offset)
+          Article.by_title_pub_and_offset(title, publication, offset)
         end
       end
     end
