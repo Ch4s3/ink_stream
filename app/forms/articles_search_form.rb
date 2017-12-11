@@ -2,7 +2,7 @@
 
 # Simple class for bilding search forms
 class ArticlesSearchForm < FormObject
-  attr_reader :title, :publications, :search_offset, :selected_publication
+  attr_reader :title, :publications, :search_offset
   validates_presence_of :title
   # setting up a blank form
   #
