@@ -8,21 +8,21 @@
       <% end %>
     </ul>
     <div class='bottom-links'>
-      <%- if @search_offset >= 10 %>
+      <%- if @search.search_offset >= 10 %>
         <%= link_to('< back 10', 
           articles_results_path(articles_search_form: { 
-            publications: @publications, 
-            title: @title_search, 
-            search_offset: (@search_offset - 10).to_s }),
+            publications: @search.selected_publication,
+            title: @search.title, 
+            search_offset: (@search.search_offset - 10).to_s }),
             data: { turbolinks_preload: true },
             class: 'articles-list-link') %>
       <% end %>
       <%- if @articles.length == 10 %>
         <%= link_to('next 10 >', 
           articles_results_path(articles_search_form: { 
-            publications: @publications, 
-            title: @title_search, 
-            search_offset: (@search_offset + 10).to_s }), 
+            publications: @search.selected_publication,
+            title: @search.title, 
+            search_offset: (@search.search_offset + 10).to_s }), 
             data: { turbolinks_preload: true }, 
             class: 'articles-list-link') %>
       <% end %>

@@ -21,6 +21,13 @@ class Article < ApplicationRecord
     end
   end
 
+  def self.by_title_pub_and_offset(title, publication, offset)
+    joins(:publication)
+      .fuzzy_title(title)
+      .where('publications.name = ?', publication)
+      .ten_ids_with_offset(offset)
+  end
+
   # Updates an existing article with new data from a hash,
   # given an existing id
   #

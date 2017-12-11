@@ -8,4 +8,10 @@ class Publication < ApplicationRecord
   scope :new_york_times, -> { find_by(name: 'New York Times') }
   scope :long_reads, -> { find_by(name: 'Long Reads') }
   scope :nautilus, -> { find_by(name: 'Nautilus') }
+
+  def self.top_publications
+    Rails.cache.fetch('publications/top_publications', expires_in: 1.hour) do
+      Publication.limit(15).pluck(:name)
+    end
+  end
 end

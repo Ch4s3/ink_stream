@@ -24,11 +24,7 @@ class ArticlesController < ApplicationController
   end
 
   def results
-    @publications = search_params[:publications]
-    @title_search = search_params[:title]
-    @search_offset = search_params[:search_offset].to_i || 0
-    @articles =
-      Articles::Finder.find(@publications, @title_search, @search_offset)
+    @articles = Articles::Finder.find(@search)
   end
 
   def show
@@ -37,18 +33,22 @@ class ArticlesController < ApplicationController
   end
 
   def search
-    @articles_search_form ||= ArticlesSearchForm.new
+    @articles_search_form = ArticlesSearchForm.new
   end
 
   private
 
   def validate_search
+    @search =
+      ArticlesSearchForm.new(search_params[:title],
+                             [search_params[:publications]],
+                             search_params[:search_offset].to_i)
     error_message = 'You must include a title to search for articles'
-    flash_and_redirect(error_message) if search_params['title'].blank?
+    flash_and_redirect(error_message) unless @search.valid?
   end
 
   def find_article_and_annotations
-    @article ||= Article.find_by(uuid: show_params['id'])
+    @article = Article.find_by(uuid: show_params['id'])
     @annotations = Annotation.where(article: @article)
   end
 

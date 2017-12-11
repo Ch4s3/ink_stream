@@ -11,7 +11,6 @@ gem 'rails', '~> 5.1.4'
 
 gem 'browser'
 gem 'devise'
-gem 'escape_utils'
 gem 'fast_blank'
 gem 'httparty'
 gem 'nokogiri'
