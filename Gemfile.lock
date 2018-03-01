@@ -275,7 +275,7 @@ GEM
     rack-cors (1.0.1)
     rack-mini-profiler (0.10.5)
       rack (>= 1.2.0)
-    rack-protection (2.0.0)
+    rack-protection (2.0.1)
       rack
     rack-proxy (0.6.2)
       rack
@@ -377,11 +377,11 @@ GEM
       faraday (>= 0.7.6, < 1.0)
     sexp_processor (4.10.0)
     shellany (0.0.1)
-    sidekiq (5.0.5)
+    sidekiq (5.1.1)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
       rack-protection (>= 1.5.0)
-      redis (>= 3.3.4, < 5)
+      redis (>= 3.3.5, < 5)
     simplecov (0.14.1)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
