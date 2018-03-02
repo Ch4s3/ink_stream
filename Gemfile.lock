@@ -273,7 +273,7 @@ GEM
     puma (3.11.2)
     rack (2.0.4)
     rack-cors (1.0.1)
-    rack-mini-profiler (0.10.5)
+    rack-mini-profiler (0.10.7)
       rack (>= 1.2.0)
     rack-protection (2.0.1)
       rack
