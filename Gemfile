@@ -7,7 +7,7 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.1.5'
 
 gem 'browser'
 gem 'devise'
@@ -15,10 +15,10 @@ gem 'fast_blank'
 gem 'httparty'
 gem 'nokogiri'
 gem 'oj'
-gem 'pg', '~> 0.18'
+gem 'pg', '~> 1.0'
 gem 'pg_query', '>= 0.9.0'
 gem 'pghero'
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.11'
 gem 'rack-cors'
 gem 'sass-rails', '~> 5.0'
 gem 'sentry-raven'
