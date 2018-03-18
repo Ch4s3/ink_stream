@@ -3,6 +3,18 @@
 require 'rails_helper'
 
 RSpec.describe PublicationsController, type: :controller do
+  describe 'GET #new' do
+    context 'with admin user' do
+      let(:user) { User.create(email: 'test@is.test', password: '1234Password', admin: true) }
+      let!(:auth) { sign_in(user) }
+      let(:subject) { get :new }
+
+      it 'returns a 200' do
+        expect(subject).to have_http_status(200)
+      end
+    end
+  end
+
   describe 'POST #create' do
     context 'with admin user' do
       let(:user) { User.create(email: 'test@is.test', password: '1234Password', admin: true) }
