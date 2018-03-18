@@ -47,7 +47,7 @@ group :development do
   gem 'fast_stack' # profiling
   gem 'flamegraph' # profiling
   gem 'guard-bundler', require: false
-  gem 'guard-rspec', require: false
+  # gem 'guard-rspec', require: false
   gem 'guard-rubocop'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'memory_profiler' # profiling
@@ -57,7 +57,6 @@ group :development do
   gem 'pronto-reek', require: false
   gem 'pronto-rubocop', require: false
   gem 'rack-mini-profiler'
-  gem 'rspec-kickstarter', git: 'https://github.com/tjchambers/rspec-kickstarter.git'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'stackprof' # profiling
@@ -68,9 +67,9 @@ end
 group :test do
   gem 'coveralls', require: false
   gem 'fakeredis', require: 'fakeredis/rspec'
-  gem 'mutant-rspec'
+  # gem 'mutant-rspec' Waiting on version bump
   gem 'rspec-benchmark'
-  gem 'rspec-rails', '~> 3.6'
+  gem 'rspec-rails', '~> 3.7'
   gem 'rspec-sidekiq'
   gem 'webmock'
 end

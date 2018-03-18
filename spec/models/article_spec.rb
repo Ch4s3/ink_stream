@@ -6,7 +6,7 @@ RSpec.describe Article, type: :model do
     let(:search) { 'Banana Stand' }
     let(:subject) { Article.fuzzy_title(search) }
 
-    it 'finds articles by partil title' do
+    it 'finds articles by partial title' do
       expect(subject).to eq([article])
     end
   end
