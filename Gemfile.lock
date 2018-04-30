@@ -174,7 +174,7 @@ GEM
     path_expander (1.0.2)
     pg (1.0.0)
     pg_query (1.0.1)
-    pghero (2.1.0)
+    pghero (2.1.1)
       activerecord
     powerpack (0.1.1)
     pronto (0.9.5)
