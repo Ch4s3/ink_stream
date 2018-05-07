@@ -360,7 +360,7 @@ GEM
     turbolinks-source (5.1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2018.3)
+    tzinfo-data (1.2018.5)
       tzinfo (>= 1.0.0)
     unicode-display_width (1.3.0)
     uniform_notifier (1.11.0)
