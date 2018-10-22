@@ -215,7 +215,7 @@ GEM
       pry (>= 0.9.11)
     pry-state (0.1.10)
       pry (>= 0.9.10, < 0.12.0)
-    public_suffix (3.0.2)
+    public_suffix (3.0.3)
     puma (3.12.0)
     rack (2.0.5)
     rack-cors (1.0.2)
@@ -378,7 +378,7 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
-    webmock (3.4.1)
+    webmock (3.4.2)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
