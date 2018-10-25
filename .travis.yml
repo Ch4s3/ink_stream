@@ -1,12 +1,12 @@
 dist: trusty
 language: ruby
 rvm:
-  - 2.5.0
+  - 2.5.1
 cache:
   - bundler
 services:
   postgres:
-    image: postgres:9.6
+    image: postgres:10.0
     ports:
       - '5432'
 env:
