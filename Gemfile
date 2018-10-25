@@ -1,4 +1,4 @@
-ruby '2.5.0'
+ruby '2.5.1'
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -18,7 +18,8 @@ gem 'oj'
 gem 'pg', '~> 1.0'
 gem 'pg_query', '>= 0.9.0'
 gem 'pghero'
-gem 'puma', '~> 3.11'
+# gem 'puma', '~> 3.11'
+gem 'falcon'
 gem 'rack-cors'
 gem 'sass-rails', '~> 5.0'
 gem 'sentry-raven'
