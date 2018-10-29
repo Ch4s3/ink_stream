@@ -2,7 +2,7 @@ const environment = require('./environment')
 const webpack = require('webpack')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
-environment.plugins.set(
+environment.plugins.prepend(
   'UglifyJs',
   new webpack.optimize.UglifyJsPlugin({
     sourceMap: true,
