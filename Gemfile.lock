@@ -207,7 +207,7 @@ GEM
     pry-clipboard (0.1.1)
       clipboard
       pry
-    pry-rails (0.3.6)
+    pry-rails (0.3.9)
       pry (>= 0.10.4)
     pry-rescue (1.4.5)
       interception (>= 0.5)
