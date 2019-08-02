@@ -69,7 +69,7 @@ group :test do
   gem 'fakeredis', require: 'fakeredis/rspec'
   # gem 'mutant-rspec' Waiting on version bump
   gem 'rspec-benchmark'
-  gem 'rspec-rails', '~> 3.7'
+  gem 'rspec-rails', '~> 3.8'
   gem 'rspec-sidekiq'
   gem 'webmock'
 end
