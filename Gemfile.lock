@@ -365,7 +365,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2018.7)
+    tzinfo-data (1.2019.2)
       tzinfo (>= 1.0.0)
     unicode-display_width (1.4.0)
     uniform_notifier (1.12.1)
