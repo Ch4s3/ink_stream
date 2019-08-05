@@ -218,7 +218,8 @@ GEM
     pry-state (0.1.10)
       pry (>= 0.9.10, < 0.12.0)
     public_suffix (3.0.3)
-    puma (3.12.0)
+    puma (4.0.1)
+      nio4r (~> 2.0)
     rack (2.0.7)
     rack-cors (1.0.2)
     rack-mini-profiler (1.0.0)
@@ -431,7 +432,7 @@ DEPENDENCIES
   pry-rescue
   pry-stack_explorer
   pry-state
-  puma (~> 3.12)
+  puma (~> 4.0)
   rack-cors
   rack-mini-profiler
   rails (~> 5.1.6)
