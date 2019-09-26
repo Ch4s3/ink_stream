@@ -1,4 +1,4 @@
-ruby '2.5.0'
+ruby '2.6.4'
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -51,7 +51,7 @@ group :development do
   gem 'guard-rubocop'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'memory_profiler' # profiling
-  gem 'pronto'
+  gem 'pronto', '>= 0.10.0'
   gem 'pronto-fasterer', require: false
   gem 'pronto-flay', require: false
   gem 'pronto-reek', require: false
@@ -65,9 +65,9 @@ group :development do
 end
 
 group :test do
-  gem 'coveralls', require: false
+  gem 'coveralls', '>= 0.8.23', require: false
   gem 'fakeredis', require: 'fakeredis/rspec'
-  # gem 'mutant-rspec' Waiting on version bump
+  # gem 'mutant-rspec'
   gem 'rspec-benchmark'
   gem 'rspec-rails', '~> 3.7'
   gem 'rspec-sidekiq'

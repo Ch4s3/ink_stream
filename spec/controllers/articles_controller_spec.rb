@@ -47,7 +47,7 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     it 'returns in under 70 ms' do
-      expect { get :show, params: { id: article.uuid } }.to perform_under(0.07).and_sample(20)
+      expect { get :show, params: { id: article.uuid } }.to perform_under(0.07).sample(20)
     end
   end
 
