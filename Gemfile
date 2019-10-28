@@ -49,7 +49,7 @@ group :development do
   gem 'guard-bundler', require: false
   # gem 'guard-rspec', require: false
   gem 'guard-rubocop'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen', '>= 3.0.5', '< 3.3'
   gem 'memory_profiler' # profiling
   gem 'pronto', '>= 0.10.0'
   gem 'pronto-fasterer', require: false
