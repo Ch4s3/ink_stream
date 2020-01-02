@@ -181,7 +181,7 @@ GEM
     path_expander (1.1.0)
     pg (1.1.4)
     pg_query (1.1.0)
-    pghero (2.3.0)
+    pghero (2.4.1)
       activerecord (>= 5)
     pronto (0.10.0)
       gitlab (~> 4.0, >= 4.0.0)
